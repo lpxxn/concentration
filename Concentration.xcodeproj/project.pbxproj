@@ -83,7 +83,6 @@
 		0A6DB8F420FB1E8900B3D70C = {
 			isa = PBXGroup;
 			children = (
-				0A37559420FB8E1800841394 /* .ignore */,
 				0A6DB8FF20FB1E8A00B3D70C /* Concentration */,
 				0A6DB91420FB1E8C00B3D70C /* ConcentrationTests */,
 				0A6DB91F20FB1E8C00B3D70C /* ConcentrationUITests */,
@@ -110,6 +109,7 @@
 				0A37559220FB6AE700841394 /* Concentration.swift */,
 				0A6DB92E20FB1F1000B3D70C /* Supporting Files */,
 				0A6DB90C20FB1E8B00B3D70C /* Info.plist */,
+				0A37559420FB8E1800841394 /* .ignore */,
 			);
 			path = Concentration;
 			sourceTree = "<group>";
