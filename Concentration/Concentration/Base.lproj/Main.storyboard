@@ -145,8 +145,8 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="IcG-3i-orP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5Bz-Ae-j51"/>
+                            <constraint firstItem="IcG-3i-orP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="jRv-IV-5RW" secondAttribute="bottom" constant="8" symbolic="YES" id="78K-XP-czM"/>
                             <constraint firstItem="jRv-IV-5RW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="I6Z-3e-fcf"/>
-                            <constraint firstItem="IcG-3i-orP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="jRv-IV-5RW" secondAttribute="bottom" constant="8" symbolic="YES" id="Tu4-su-Xyh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IcG-3i-orP" secondAttribute="bottom" id="kGh-rB-7Fq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jRv-IV-5RW" secondAttribute="trailing" constant="16" id="r3l-eG-vD0"/>
                             <constraint firstItem="jRv-IV-5RW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vcl-sh-aCk"/>
