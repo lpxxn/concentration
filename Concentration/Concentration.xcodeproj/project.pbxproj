@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A0A5A5E210028860093BFC6 /* ConstDemo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A0A5A5D210028860093BFC6 /* ConstDemo.xib */; };
+		0A23AA912100BE5E00E162E2 /* Eles in Resources */ = {isa = PBXBuildFile; fileRef = 0A23AA902100BE5E00E162E2 /* Eles */; };
 		0A37559120FB696C00841394 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A37559020FB696C00841394 /* Card.swift */; };
 		0A37559320FB6AE700841394 /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A37559220FB6AE700841394 /* Concentration.swift */; };
 		0A37559520FB8E1800841394 /* .ignore in Resources */ = {isa = PBXBuildFile; fileRef = 0A37559420FB8E1800841394 /* .ignore */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A0A5A5D210028860093BFC6 /* ConstDemo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConstDemo.xib; sourceTree = "<group>"; };
+		0A23AA902100BE5E00E162E2 /* Eles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Eles; sourceTree = "<group>"; };
 		0A37559020FB696C00841394 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		0A37559220FB6AE700841394 /* Concentration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
 		0A37559420FB8E1800841394 /* .ignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .ignore; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 		0A6DB8FF20FB1E8A00B3D70C /* Concentration */ = {
 			isa = PBXGroup;
 			children = (
+				0A23AA902100BE5E00E162E2 /* Eles */,
 				0A6DB90420FB1E8A00B3D70C /* Main.storyboard */,
 				0A6DB90220FB1E8A00B3D70C /* ViewController.swift */,
 				0A37559020FB696C00841394 /* Card.swift */,
@@ -110,6 +115,7 @@
 				0A6DB92E20FB1F1000B3D70C /* Supporting Files */,
 				0A6DB90C20FB1E8B00B3D70C /* Info.plist */,
 				0A37559420FB8E1800841394 /* .ignore */,
+				0A0A5A5D210028860093BFC6 /* ConstDemo.xib */,
 			);
 			path = Concentration;
 			sourceTree = "<group>";
@@ -247,8 +253,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A6DB90B20FB1E8B00B3D70C /* LaunchScreen.storyboard in Resources */,
+				0A23AA912100BE5E00E162E2 /* Eles in Resources */,
 				0A37559520FB8E1800841394 /* .ignore in Resources */,
 				0A6DB90820FB1E8B00B3D70C /* Assets.xcassets in Resources */,
+				0A0A5A5E210028860093BFC6 /* ConstDemo.xib in Resources */,
 				0A6DB90620FB1E8A00B3D70C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
