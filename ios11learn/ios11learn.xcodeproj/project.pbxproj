@@ -14,6 +14,8 @@
 		0AC7730F2100CE0F002DD2BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AC7730D2100CE0F002DD2BD /* LaunchScreen.storyboard */; };
 		0AC7731A2100CE10002DD2BD /* ios11learnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC773192100CE10002DD2BD /* ios11learnTests.swift */; };
 		0AC773252100CE10002DD2BD /* ios11learnUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC773242100CE10002DD2BD /* ios11learnUITests.swift */; };
+		0AC773332100D8C8002DD2BD /* SignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC773322100D8C8002DD2BD /* SignViewController.swift */; };
+		0AC773392100DBA6002DD2BD /* RegisterUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC773382100DBA6002DD2BD /* RegisterUserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		0AC773202100CE10002DD2BD /* ios11learnUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ios11learnUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC773242100CE10002DD2BD /* ios11learnUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios11learnUITests.swift; sourceTree = "<group>"; };
 		0AC773262100CE10002DD2BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AC773322100D8C8002DD2BD /* SignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewController.swift; sourceTree = "<group>"; };
+		0AC773382100DBA6002DD2BD /* RegisterUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				0AC7730B2100CE0F002DD2BD /* Assets.xcassets */,
 				0AC7730D2100CE0F002DD2BD /* LaunchScreen.storyboard */,
 				0AC773102100CE0F002DD2BD /* Info.plist */,
+				0AC773322100D8C8002DD2BD /* SignViewController.swift */,
+				0AC773382100DBA6002DD2BD /* RegisterUserViewController.swift */,
 			);
 			path = ios11learn;
 			sourceTree = "<group>";
@@ -256,7 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AC773392100DBA6002DD2BD /* RegisterUserViewController.swift in Sources */,
 				0AC773072100CE0D002DD2BD /* ViewController.swift in Sources */,
+				0AC773332100D8C8002DD2BD /* SignViewController.swift in Sources */,
 				0AC773052100CE0D002DD2BD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
