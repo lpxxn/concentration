@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A8CD0C421021C140080910B /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8CD0C321021C140080910B /* HomePageViewController.swift */; };
 		0AC773052100CE0D002DD2BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC773042100CE0D002DD2BD /* AppDelegate.swift */; };
 		0AC773072100CE0D002DD2BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC773062100CE0D002DD2BD /* ViewController.swift */; };
 		0AC7730A2100CE0D002DD2BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AC773082100CE0D002DD2BD /* Main.storyboard */; };
@@ -16,6 +17,13 @@
 		0AC773252100CE10002DD2BD /* ios11learnUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC773242100CE10002DD2BD /* ios11learnUITests.swift */; };
 		0AC773332100D8C8002DD2BD /* SignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC773322100D8C8002DD2BD /* SignViewController.swift */; };
 		0AC773392100DBA6002DD2BD /* RegisterUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC773382100DBA6002DD2BD /* RegisterUserViewController.swift */; };
+		0AE007F02103394F00A9635E /* ChatBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE007EF2103394F00A9635E /* ChatBaseCell.swift */; };
+		0AE007F3210406B500A9635E /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE007F2210406B500A9635E /* ChatModel.swift */; };
+		0AE007F5210406E900A9635E /* MsgTypeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE007F4210406E900A9635E /* MsgTypeInfo.swift */; };
+		0AE007F72104080B00A9635E /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE007F62104080B00A9635E /* UserManager.swift */; };
+		0AE007F921040BB500A9635E /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AE007F821040BB500A9635E /* SwiftyJSON.framework */; };
+		0AE007FB21040BB500A9635E /* YYText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AE007FA21040BB500A9635E /* YYText.framework */; };
+		5154A96404CD4D1AB40D9028 /* Pods_ios11learn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA25DF0A50CA3E5ACC9D5D4B /* Pods_ios11learn.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A8CD0C321021C140080910B /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		0AC773012100CE0D002DD2BD /* ios11learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios11learn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC773042100CE0D002DD2BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AC773062100CE0D002DD2BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +60,15 @@
 		0AC773262100CE10002DD2BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AC773322100D8C8002DD2BD /* SignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewController.swift; sourceTree = "<group>"; };
 		0AC773382100DBA6002DD2BD /* RegisterUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserViewController.swift; sourceTree = "<group>"; };
+		0AE007EF2103394F00A9635E /* ChatBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBaseCell.swift; sourceTree = "<group>"; };
+		0AE007F2210406B500A9635E /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
+		0AE007F4210406E900A9635E /* MsgTypeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MsgTypeInfo.swift; sourceTree = "<group>"; };
+		0AE007F62104080B00A9635E /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		0AE007F821040BB500A9635E /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AE007FA21040BB500A9635E /* YYText.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = YYText.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26E55BB247C46B583D5232B5 /* Pods-ios11learn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios11learn.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios11learn/Pods-ios11learn.release.xcconfig"; sourceTree = "<group>"; };
+		372B5549290DE8B6422104F4 /* Pods-ios11learn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios11learn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios11learn/Pods-ios11learn.debug.xcconfig"; sourceTree = "<group>"; };
+		EA25DF0A50CA3E5ACC9D5D4B /* Pods_ios11learn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios11learn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +76,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AE007F921040BB500A9635E /* SwiftyJSON.framework in Frameworks */,
+				0AE007FB21040BB500A9635E /* YYText.framework in Frameworks */,
+				5154A96404CD4D1AB40D9028 /* Pods_ios11learn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +106,8 @@
 				0AC773182100CE10002DD2BD /* ios11learnTests */,
 				0AC773232100CE10002DD2BD /* ios11learnUITests */,
 				0AC773022100CE0D002DD2BD /* Products */,
+				1E779EC3660F5CEDE41AD992 /* Pods */,
+				2A53A77F83BCD5A3B9F4E76E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +124,7 @@
 		0AC773032100CE0D002DD2BD /* ios11learn */ = {
 			isa = PBXGroup;
 			children = (
+				0AE007ED2103393400A9635E /* Chat */,
 				0AC773042100CE0D002DD2BD /* AppDelegate.swift */,
 				0AC773062100CE0D002DD2BD /* ViewController.swift */,
 				0AC773082100CE0D002DD2BD /* Main.storyboard */,
@@ -109,6 +133,7 @@
 				0AC773102100CE0F002DD2BD /* Info.plist */,
 				0AC773322100D8C8002DD2BD /* SignViewController.swift */,
 				0AC773382100DBA6002DD2BD /* RegisterUserViewController.swift */,
+				0A8CD0C321021C140080910B /* HomePageViewController.swift */,
 			);
 			path = ios11learn;
 			sourceTree = "<group>";
@@ -131,6 +156,52 @@
 			path = ios11learnUITests;
 			sourceTree = "<group>";
 		};
+		0AE007ED2103393400A9635E /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				0AE007F12104068900A9635E /* Model */,
+				0AE007EE2103393400A9635E /* Cell */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		0AE007EE2103393400A9635E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0AE007EF2103394F00A9635E /* ChatBaseCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0AE007F12104068900A9635E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0AE007F2210406B500A9635E /* ChatModel.swift */,
+				0AE007F4210406E900A9635E /* MsgTypeInfo.swift */,
+				0AE007F62104080B00A9635E /* UserManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1E779EC3660F5CEDE41AD992 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				372B5549290DE8B6422104F4 /* Pods-ios11learn.debug.xcconfig */,
+				26E55BB247C46B583D5232B5 /* Pods-ios11learn.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2A53A77F83BCD5A3B9F4E76E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0AE007F821040BB500A9635E /* SwiftyJSON.framework */,
+				0AE007FA21040BB500A9635E /* YYText.framework */,
+				EA25DF0A50CA3E5ACC9D5D4B /* Pods_ios11learn.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +209,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0AC773292100CE10002DD2BD /* Build configuration list for PBXNativeTarget "ios11learn" */;
 			buildPhases = (
+				F36CA35AD61AA74106CD5E89 /* [CP] Check Pods Manifest.lock */,
 				0AC772FD2100CE0D002DD2BD /* Sources */,
 				0AC772FE2100CE0D002DD2BD /* Frameworks */,
 				0AC772FF2100CE0D002DD2BD /* Resources */,
+				2948219FDD8947D16F839A9A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -257,14 +330,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2948219FDD8947D16F839A9A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ios11learn/Pods-ios11learn-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/YYText/YYText.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYText.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios11learn/Pods-ios11learn-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F36CA35AD61AA74106CD5E89 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ios11learn-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0AC772FD2100CE0D002DD2BD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AE007F72104080B00A9635E /* UserManager.swift in Sources */,
 				0AC773392100DBA6002DD2BD /* RegisterUserViewController.swift in Sources */,
+				0AE007F5210406E900A9635E /* MsgTypeInfo.swift in Sources */,
 				0AC773072100CE0D002DD2BD /* ViewController.swift in Sources */,
 				0AC773332100D8C8002DD2BD /* SignViewController.swift in Sources */,
+				0AE007F3210406B500A9635E /* ChatModel.swift in Sources */,
+				0A8CD0C421021C140080910B /* HomePageViewController.swift in Sources */,
+				0AE007F02103394F00A9635E /* ChatBaseCell.swift in Sources */,
 				0AC773052100CE0D002DD2BD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +555,7 @@
 		};
 		0AC7732A2100CE10002DD2BD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 372B5549290DE8B6422104F4 /* Pods-ios11learn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -454,6 +574,7 @@
 		};
 		0AC7732B2100CE10002DD2BD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26E55BB247C46B583D5232B5 /* Pods-ios11learn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

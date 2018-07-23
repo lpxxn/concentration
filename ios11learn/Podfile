@@ -1,0 +1,16 @@
+platform:ios,'9.0'
+use_frameworks!
+# ignore all warnings from all pods
+inhibit_all_warnings!
+
+def pods
+    #Swift
+    pod 'SwiftyJSON', '~> 4.0'
+
+    #Objective-C
+    pod 'YYText', '1.0.7'
+end
+
+target 'ios11learn' do
+    pods
+end

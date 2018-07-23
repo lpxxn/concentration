@@ -1,0 +1,20 @@
+PODS:
+  - SwiftyJSON (4.1.0)
+  - YYText (1.0.7)
+
+DEPENDENCIES:
+  - SwiftyJSON (~> 4.0)
+  - YYText (= 1.0.7)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SwiftyJSON
+    - YYText
+
+SPEC CHECKSUMS:
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+
+PODFILE CHECKSUM: 0e1cfa5cb63bd23011112b22302845ba71011e3f
+
+COCOAPODS: 1.5.3

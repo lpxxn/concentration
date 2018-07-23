@@ -18,6 +18,12 @@ class SignViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+//        let btn = UIButton()
+//        btn.setTitle("Come on", for: UIControlState(rawValue: 0))
+//        btn.sizeToFit()
+//        btn.center = view.center
+//        btn.backgroundColor = .black
+//        view.addSubview(btn)
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,7 +39,10 @@ class SignViewController: UIViewController {
         print("Register account button tapped")
         
         let registerViewController = self.storyboard?.instantiateViewController(withIdentifier: "RegisterUserViewController") as! RegisterUserViewController
+//        registerViewController.modalTransitionStyle = .partialCurl
+//        registerViewController.modalPresentationStyle = .pageSheet
         self.present(registerViewController, animated: true)
+        //performSegue(withIdentifier: "RegisterUserViewController", sender: self)
     }
     
     
