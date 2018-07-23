@@ -20,9 +20,10 @@ class SignViewController: UIViewController {
         // Do any additional setup after loading the view.
 //        let btn = UIButton()
 //        btn.setTitle("Come on", for: UIControlState(rawValue: 0))
+//        btn.setTitleColor(.black, for: UIControlState(rawValue: 0))
 //        btn.sizeToFit()
 //        btn.center = view.center
-//        btn.backgroundColor = .black
+//        //btn.backgroundColor = .black
 //        view.addSubview(btn)
     }
 
