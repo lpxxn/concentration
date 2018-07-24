@@ -11,6 +11,13 @@ import Foundation
 @objcMembers
 class Person: NSObject {
     var name: String?
+    // 基本数据类型不能设置成可选的。要给一个初始值
+    var age: Int = 0
+    var age2: Double = 0
+    var age3: Float = 0
+    var age4: Float64 = 0
+    var age5: Bool = false
+    
     override init() {
         self.name = ""
         super.init()
@@ -25,6 +32,11 @@ class Person: NSObject {
         // super.init() 要先于setValueForKeys
         self.setValuesForKeys(dic)
     }
+    
+    override var description: String {
+        return "\(self.name), \(self.age), \(self.age5)"
+    }
+    
 }
 
 class student: Person {

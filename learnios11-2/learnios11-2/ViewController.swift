@@ -13,8 +13,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        let p1 = Person(dic: ["name": "lilililili" as AnyObject])
-        print("p name \(p1.name)")
+        let p1 = Person(dic: ["name": "lilililili" as AnyObject,
+                              "age": 1111 as AnyObject,
+                              "age2": 123 as AnyObject,
+                              "age3": 333 as AnyObject,
+                              "age4": 444 as AnyObject,
+                              "age5": true as AnyObject])
+        print("p name \(p1.name) age \(p1)")
         
         setupUI()
         // Do any additional setup after loading the view, typically from a nib.
