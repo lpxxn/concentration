@@ -26,6 +26,15 @@ class Person: NSObject {
         self.name = name
         super.init()
     }
+    
+    //  便利构造
+    convenience init?(age: Int) {
+        if (age > 100) {
+            return nil
+        }
+        self.init()
+    }
+    
     // kvc
     init(dic: [String:AnyObject]) {
         super.init()

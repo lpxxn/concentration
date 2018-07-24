@@ -10,9 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var car: Car? {
+        didSet{
+            carOb = CarObserver(car!)
+        }
+    }
+    var carOb: CarObserver?
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        car = Car()
+        car?.miles = 1
+        print(carOb?.name)
+        
+        
+        
         let p1 = Person(dic: ["name": "lilililili" as AnyObject,
                               "age": 1111 as AnyObject,
                               "age2": 123 as AnyObject,
@@ -112,9 +124,9 @@ class ViewController: UIViewController {
         view.addSubview(tf1)
         self.tf1 = tf1
         
-        var tf2 = UITextField(frame: CGRect(x: 140, y: 120, width: 100, height: 30))
-        tf2.borderStyle = .roundedRect
-        tf2.text = "0"
+        var tf2 = UITextField(frame: CGRect(x: 140, y: 120, width: 100, height: 30), txt: "0")
+//        tf2.borderStyle = .roundedRect
+//        tf2.text = "0"
         view.addSubview(tf2)
         self.tf2 = tf2
         
@@ -195,9 +207,20 @@ class ViewController: UIViewController {
     @objc func btnTouchUp(_ btn: UIButton) {
         let t = btn.titleLabel?.text ?? "nil"
         print(t)
+        print(car?.miles)
+        print(carOb?.name)
         print(#function)
     }
     
     
+}
+
+extension UITextField {
+    convenience init(frame: CGRect, txt: String, fontSize: CGFloat = 15) {
+        self.init(frame: frame)
+        self.borderStyle = .roundedRect
+        self.text = txt
+        self.font = UIFont.systemFont(ofSize: fontSize)
+    }
 }
 
