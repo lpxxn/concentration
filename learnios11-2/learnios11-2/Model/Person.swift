@@ -7,9 +7,10 @@
 //
 
 import Foundation
-
+// kvc 或者每个属性加上 @objc
+@objcMembers
 class Person: NSObject {
-    var name: String
+    var name: String?
     override init() {
         self.name = ""
         super.init()
@@ -17,6 +18,12 @@ class Person: NSObject {
     init(name: String) {
         self.name = name
         super.init()
+    }
+    // kvc
+    init(dic: [String:AnyObject]) {
+        super.init()
+        // super.init() 要先于setValueForKeys
+        self.setValuesForKeys(dic)
     }
 }
 

@@ -11,7 +11,11 @@ import UIKit
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        let p1 = Person(dic: ["name": "lilililili" as AnyObject])
+        print("p name \(p1.name)")
+        
         setupUI()
         // Do any additional setup after loading the view, typically from a nib.
         loadData { (rev) in
@@ -28,7 +32,7 @@ class ViewController: UIViewController {
             // ？可选解包， wself 被释放后没有出错
             // ! 如果用！ wself被释放后会报错
             // error :print(wSefl!.view)
-            print(wSefl?.view)
+            print(wSefl?.view ?? "")
         }
         
         loadData2 {
