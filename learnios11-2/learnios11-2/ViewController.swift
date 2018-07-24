@@ -51,6 +51,18 @@ class ViewController: UIViewController {
 //                print(self.view)
 //            }
 //        }
+        
+        let url = URL(string: "http://www.baidu.com")
+        URLSession.shared.dataTask(with: url!) { (data, _, error) in
+            guard let data2 = data else {
+                print("err \(String(describing: error))")
+                return
+            }
+            let html = String(data: data2, encoding: .utf8)
+            print(html)
+            
+            
+        }.resume()
     }
 
     override func didReceiveMemoryWarning() {
@@ -185,5 +197,7 @@ class ViewController: UIViewController {
         print(t)
         print(#function)
     }
+    
+    
 }
 
