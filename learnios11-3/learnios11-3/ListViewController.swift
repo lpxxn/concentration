@@ -81,7 +81,11 @@ class ListViewController: UITableViewController {
         if let indexPath = sender as? IndexPath {
             let person = personList[indexPath.row]
             detalControl.personInfo = person
+            detalControl.completeUpdateInfo = {
+                self.tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
         }
+        
         
     }
     

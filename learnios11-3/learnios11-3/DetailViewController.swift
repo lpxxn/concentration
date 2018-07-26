@@ -17,6 +17,7 @@ class DetailViewController: UITableViewController {
     @IBOutlet weak var titleTxt: UITextField!
     
     var personInfo: Person?
+    var completeUpdateInfo: (()->())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,16 @@ class DetailViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func SaveInfo(_ sender: Any) {
+        personInfo?.name = nameTxt.text
+        personInfo?.phone = phoneTxt.text
+        personInfo?.title = titleTxt.text
+        completeUpdateInfo?()
+        
+        navigationController?.popViewController(animated: true)
+    }
+
 
     // MARK: - Table view data source
    /*
