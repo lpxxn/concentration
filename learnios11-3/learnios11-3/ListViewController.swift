@@ -88,8 +88,9 @@ class ListViewController: UITableViewController {
 //            let person = Person()
 //            detalControl.personInfo = person
           
-            detalControl.completeUpdateInfo = {
-                guard let person = detalControl.personInfo else {
+            // detalControl  引用闭包 闭包引用 detalControl
+            detalControl.completeUpdateInfo = { [weak detalControl] in
+                guard let person = detalControl?.personInfo else {
                     return
                 }
                 self.personList.append(person)
