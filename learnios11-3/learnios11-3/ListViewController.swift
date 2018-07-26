@@ -55,8 +55,8 @@ class ListViewController: UITableViewController {
     }
     
     // MARK: - suge
-    @IBAction func addNewPersonData(sender: UIButton) {
-        
+    @IBAction func addNewPersonData(sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "List2Detail", sender: nil)
     }
     
     // MARK: - Table view data source
@@ -83,6 +83,17 @@ class ListViewController: UITableViewController {
             detalControl.personInfo = person
             detalControl.completeUpdateInfo = {
                 self.tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
+        } else {
+//            let person = Person()
+//            detalControl.personInfo = person
+          
+            detalControl.completeUpdateInfo = {
+                guard let person = detalControl.personInfo else {
+                    return
+                }
+                self.personList.append(person)
+                self.tableView.reloadData()
             }
         }
         

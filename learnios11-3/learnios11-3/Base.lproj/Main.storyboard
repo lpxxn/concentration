@@ -49,7 +49,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Asscssions List" id="SWA-XJ-fcK">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="eRQ-zr-DMh"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="eRQ-zr-DMh">
+                            <connections>
+                                <action selector="addNewPersonDataWithSender:" destination="0Vv-sv-otf" id="aXm-DI-vg5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="YKO-DC-Qmt" kind="show" identifier="List2Detail" id="hkU-3N-nTG"/>

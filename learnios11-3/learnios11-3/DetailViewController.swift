@@ -40,6 +40,10 @@ class DetailViewController: UITableViewController {
     }
     
     @IBAction func SaveInfo(_ sender: Any) {
+        if personInfo == nil {
+            personInfo = Person()
+        }
+        
         personInfo?.name = nameTxt.text
         personInfo?.phone = phoneTxt.text
         personInfo?.title = titleTxt.text
