@@ -49,14 +49,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Asscssions List" id="SWA-XJ-fcK">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="eRQ-zr-DMh">
-                            <connections>
-                                <segue destination="YKO-DC-Qmt" kind="show" id="Dkg-xN-yHq"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="eRQ-zr-DMh"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="YKO-DC-Qmt" kind="show" identifier="ListToDetail" id="hkU-3N-nTG"/>
+                        <segue destination="YKO-DC-Qmt" kind="show" identifier="List2Detail" id="hkU-3N-nTG"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XBr-db-nr8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -151,6 +147,11 @@
                         <barButtonItem key="rightBarButtonItem" title="Save" id="kWM-U2-yZU"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="nameTxt" destination="Rx4-YE-W5u" id="O8f-ka-2ee"/>
+                        <outlet property="phoneTxt" destination="69s-Uj-TIR" id="PmS-qX-TDd"/>
+                        <outlet property="titleTxt" destination="25N-uF-IdB" id="ery-QZ-Gww"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xWF-pY-GYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -173,7 +174,4 @@
             <point key="canvasLocation" x="-511" y="-153"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Dkg-xN-yHq"/>
-    </inferredMetricsTieBreakers>
 </document>

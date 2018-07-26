@@ -54,7 +54,12 @@ class ListViewController: UITableViewController {
         }
     }
     
+    // MARK: - suge
+    @IBAction func addNewPersonData(sender: UIButton) {
+        
+    }
     
+    // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return personList.count
     }
@@ -64,6 +69,20 @@ class ListViewController: UITableViewController {
         cell.textLabel?.text = personList[indexPath.row].name
         cell.detailTextLabel?.text = personList[indexPath.row].phone
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "List2Detail", sender: indexPath)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let detalControl = segue.destination as! DetailViewController
+        if let indexPath = sender as? IndexPath {
+            let person = personList[indexPath.row]
+            detalControl.personInfo = person
+        }
+        
     }
     
     // MARK: - Table view data source

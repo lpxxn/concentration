@@ -10,9 +10,22 @@ import UIKit
 
 class DetailViewController: UITableViewController {
 
+    @IBOutlet weak var nameTxt: UITextField!
+    
+    @IBOutlet weak var phoneTxt: UITextField!
+    
+    @IBOutlet weak var titleTxt: UITextField!
+    
+    var personInfo: Person?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if personInfo != nil {
+            nameTxt.text = personInfo?.name
+            phoneTxt.text = personInfo?.phone
+            titleTxt.text = personInfo?.title
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
