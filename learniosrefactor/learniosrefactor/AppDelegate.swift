@@ -19,7 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow()
         
-        let className = "learniosrefactor.ViewController"
+        print(Bundle.main.infoDictionary!)
+        
+        let ns = Bundle.main.infoDictionary?["CFBundleName"] as? String ?? ""
+        print("BundleName \(ns)")
+        let className = "\(ns).ViewController"
+        
+        
         let cls = NSClassFromString(className) as! UIViewController.Type
         let vc = cls.init()
         window?.rootViewController = vc
