@@ -23,7 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let ns = Bundle.main.infoDictionary?["CFBundleName"] as? String ?? ""
         print("BundleName \(ns)")
-        let className = "\(ns).ViewController"
+        
+        
+        let className = "\(Bundle.main.ns).ViewController"
         
         
         let cls = NSClassFromString(className) as! UIViewController.Type
@@ -57,5 +59,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+
+extension Bundle {
+    func namespace() -> String {
+      return infoDictionary!["CFBundleName"] as? String ?? ""
+        //return Bundle.main.infoDictionary!["CFBundleName"] as? String ?? ""
+    }
+    var ns:String {
+          return infoDictionary!["CFBundleName"] as? String ?? ""
+    }
 }
 
