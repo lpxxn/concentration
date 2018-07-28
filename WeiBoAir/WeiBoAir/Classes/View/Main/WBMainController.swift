@@ -64,9 +64,16 @@ extension WBMainController {
         let vc = cls.init()
         vc.title = title
         
+
+        
         let nav = WBNavigationController(rootViewController: vc)
         nav.tabBarItem.image = UIImage(named: "tabbar_\(imgName)")
         nav.tabBarItem.selectedImage = UIImage(named: "tabbar_\(imgName)_selected")?.withRenderingMode(.alwaysOriginal)
+        nav.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor.orange], for: UIControlState.highlighted)
+        // 设置字体 设置normal 才有效。默认为12号字
+        nav.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.font: UIFont.systemFont(ofSize: 13)], for: .normal)
+
+        
         return nav
     }
 }
