@@ -15,6 +15,8 @@
 		0A2463DD210CADE9006DF5BE /* WBMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2463DC210CADE9006DF5BE /* WBMessageViewController.swift */; };
 		0A2463DF210CADF8006DF5BE /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2463DE210CADF8006DF5BE /* WBDiscoverViewController.swift */; };
 		0A2463E1210CAE07006DF5BE /* WBProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2463E0210CAE07006DF5BE /* WBProfileViewController.swift */; };
+		0A2463E3210CB7F4006DF5BE /* UIColorExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2463E2210CB7F4006DF5BE /* UIColorExtend.swift */; };
+		0A2463E5210CB8D1006DF5BE /* TypeExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2463E4210CB8D1006DF5BE /* TypeExtend.swift */; };
 		0A3947F1210C676800DD8ACE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3947F0210C676800DD8ACE /* AppDelegate.swift */; };
 		0A3947F6210C676800DD8ACE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A3947F4210C676800DD8ACE /* Main.storyboard */; };
 		0A3947F8210C676B00DD8ACE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A3947F7210C676B00DD8ACE /* Assets.xcassets */; };
@@ -29,6 +31,8 @@
 		0A2463DC210CADE9006DF5BE /* WBMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBMessageViewController.swift; sourceTree = "<group>"; };
 		0A2463DE210CADF8006DF5BE /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
 		0A2463E0210CAE07006DF5BE /* WBProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBProfileViewController.swift; sourceTree = "<group>"; };
+		0A2463E2210CB7F4006DF5BE /* UIColorExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtend.swift; sourceTree = "<group>"; };
+		0A2463E4210CB8D1006DF5BE /* TypeExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeExtend.swift; sourceTree = "<group>"; };
 		0A3947ED210C676800DD8ACE /* WeiBoAir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiBoAir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A3947F0210C676800DD8ACE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A3947F5210C676800DD8ACE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				0A2463D2210CAB01006DF5BE /* BundleExtend.swift */,
+				0A2463E2210CB7F4006DF5BE /* UIColorExtend.swift */,
+				0A2463E4210CB8D1006DF5BE /* TypeExtend.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -236,6 +242,8 @@
 				0A2463DF210CADF8006DF5BE /* WBDiscoverViewController.swift in Sources */,
 				0A2463D7210CAD45006DF5BE /* WBNavigationController.swift in Sources */,
 				0A2463DD210CADE9006DF5BE /* WBMessageViewController.swift in Sources */,
+				0A2463E3210CB7F4006DF5BE /* UIColorExtend.swift in Sources */,
+				0A2463E5210CB8D1006DF5BE /* TypeExtend.swift in Sources */,
 				0A2463D5210CACD2006DF5BE /* WBMainController.swift in Sources */,
 				0A2463E1210CAE07006DF5BE /* WBProfileViewController.swift in Sources */,
 				0A2463DB210CADD2006DF5BE /* WBHomeViewController.swift in Sources */,

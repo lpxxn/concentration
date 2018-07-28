@@ -14,6 +14,7 @@ class WBMainController: UITabBarController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupChildControllers()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,3 +34,44 @@ class WBMainController: UITabBarController {
     */
 
 }
+
+extension WBMainController {
+    private func setupChildControllers() {
+        let array = [
+            ["clsName": "WBHomeViewController", "title": "首页", "imageName": "home"],
+            //["clsName": "", "title": "", "imageName": ""],
+            ["clsName": "WBMessageViewController", "title": "消息", "imageName": "message_center"],
+            ["clsName": "WBDiscoverViewController", "title": "发现", "imageName": "discover"],
+            ["clsName": "WBProfileViewController", "title": "资料", "imageName": "profile"],
+        ]
+        var arrayM = [UIViewController]()
+        for dict in array {
+            arrayM.append(controller(dict: dict))
+            
+        }
+        viewControllers = arrayM
+    }
+    
+    private func controller(dict: [String: String]) -> UIViewController {
+        guard  let className = dict["clsName"],
+            let title = dict["title"],
+            let imgName = dict["imageName"],
+            let cls = NSClassFromString("\(Bundle.main.NS).\(className)") as? UIViewController.Type
+            else {
+            return UIViewController()
+        }
+        
+        let vc = cls.init()
+        vc.title = title
+        
+        let nav = WBNavigationController(rootViewController: vc)
+        nav.tabBarItem.image = UIImage(named: "tabbar_\(imgName)")
+        nav.tabBarItem.selectedImage = UIImage(named: "tabbar_\(imgName)_selected")?.withRenderingMode(.alwaysOriginal)
+        return nav
+    }
+}
+
+
+
+
+
