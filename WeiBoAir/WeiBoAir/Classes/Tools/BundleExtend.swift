@@ -10,6 +10,11 @@ import Foundation
 
 extension Bundle {
     var NS: String {
+        //print("Bundles: \(infoDictionary)")
         return infoDictionary!["CFBundleName"] as? String ?? ""
+    }
+    
+    var WBApk: String {
+        return infoDictionary!["wbappkey"] as! String
     }
 }
