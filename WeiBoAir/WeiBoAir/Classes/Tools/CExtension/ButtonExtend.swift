@@ -22,4 +22,21 @@ extension UIButton {
     
         return button
     }
+    
+    static func lp_textButton(title: String, fontSize: CGFloat, normalColor: UIColor, highlightedColor: UIColor, backgroundImgName: String) -> UIButton {
+        let button = UIButton()
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(normalColor, for: .normal)
+        button.setTitleColor(highlightedColor, for: .highlighted)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
+        
+        if !backgroundImgName.isEmpty {
+            button.setBackgroundImage(UIImage(named: backgroundImgName), for: .normal)
+            let backgroundImgNameHL = "\(backgroundImgName)_highlighted"
+            button.setBackgroundImage(UIImage(named: backgroundImgNameHL), for: .highlighted)
+        }
+        
+        button.sizeToFit()
+        return button
+    }
 }
