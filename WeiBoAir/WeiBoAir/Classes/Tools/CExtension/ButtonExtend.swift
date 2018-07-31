@@ -29,6 +29,7 @@ extension UIButton {
         button.setTitleColor(normalColor, for: .normal)
         button.setTitleColor(highlightedColor, for: .highlighted)
         button.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
+
         
         if !backgroundImgName.isEmpty {
             button.setBackgroundImage(UIImage(named: backgroundImgName), for: .normal)
