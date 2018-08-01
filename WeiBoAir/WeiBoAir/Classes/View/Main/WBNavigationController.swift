@@ -10,10 +10,16 @@ import UIKit
 
 class WBNavigationController: UINavigationController {
 
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+       
 
         // Do any additional setup after loading the view.
+        //  隐藏默认的条
+        isNavigationBarHidden = true
+
     }
 
     override func didReceiveMemoryWarning() {

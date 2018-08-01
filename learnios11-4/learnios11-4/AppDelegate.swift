@@ -17,16 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        window = UIWindow()
-        window?.backgroundColor = .white
-        
-        // 命名空间不要有中文，数字或特殊字符 这个例子是跑不了了。看learniosrefactor这个例子吧
-      
-        let vc = ViewController()
-
-        
-        window?.rootViewController = vc
-        window?.makeKeyAndVisible()
+//        window = UIWindow()
+//        window?.backgroundColor = .white
+//
+//        // 命名空间不要有中文，数字或特殊字符 这个例子是跑不了了。看learniosrefactor这个例子吧
+//
+//        let vc = ViewController()
+//
+//
+//        window?.rootViewController = vc
+//        window?.makeKeyAndVisible()
         return true
     }
 

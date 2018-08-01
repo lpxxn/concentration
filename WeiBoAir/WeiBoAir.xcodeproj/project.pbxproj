@@ -22,6 +22,7 @@
 		0A3947F1210C676800DD8ACE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3947F0210C676800DD8ACE /* AppDelegate.swift */; };
 		0A3947F6210C676800DD8ACE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A3947F4210C676800DD8ACE /* Main.storyboard */; };
 		0A3947F8210C676B00DD8ACE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A3947F7210C676B00DD8ACE /* Assets.xcassets */; };
+		0AA900E321103C17009ECD30 /* ScreenExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA900E221103C17009ECD30 /* ScreenExtend.swift */; };
 		17E950FA116E850C1F7D89E6 /* Pods_WeiBoAir.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73258C7038A0D56CA729DEA0 /* Pods_WeiBoAir.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		0A3947F5210C676800DD8ACE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A3947F7210C676B00DD8ACE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A3947FC210C676B00DD8ACE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AA900E221103C17009ECD30 /* ScreenExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenExtend.swift; sourceTree = "<group>"; };
 		73258C7038A0D56CA729DEA0 /* Pods_WeiBoAir.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeiBoAir.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A288592D9316053AF90E3360 /* Pods-WeiBoAir.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBoAir.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeiBoAir/Pods-WeiBoAir.release.xcconfig"; sourceTree = "<group>"; };
 		A45A3B0B3F8EB320ACE98E09 /* Pods-WeiBoAir.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBoAir.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeiBoAir/Pods-WeiBoAir.debug.xcconfig"; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				0A2463E4210CB8D1006DF5BE /* TypeExtend.swift */,
 				0A2463D2210CAB01006DF5BE /* BundleExtend.swift */,
 				0A2A0CA2210D66710077F4AA /* ButtonExtend.swift */,
+				0AA900E221103C17009ECD30 /* ScreenExtend.swift */,
 			);
 			path = CExtension;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				0A2463E5210CB8D1006DF5BE /* TypeExtend.swift in Sources */,
 				0A2463D5210CACD2006DF5BE /* WBMainController.swift in Sources */,
 				0A2463E1210CAE07006DF5BE /* WBProfileViewController.swift in Sources */,
+				0AA900E321103C17009ECD30 /* ScreenExtend.swift in Sources */,
 				0A2463DB210CADD2006DF5BE /* WBHomeViewController.swift in Sources */,
 				0A2A0CA3210D66710077F4AA /* ButtonExtend.swift in Sources */,
 				0A3947F1210C676800DD8ACE /* AppDelegate.swift in Sources */,
@@ -489,6 +493,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9MM75DE52S;
 				INFOPLIST_FILE = WeiBoAir/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -509,6 +514,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9MM75DE52S;
 				INFOPLIST_FILE = WeiBoAir/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
