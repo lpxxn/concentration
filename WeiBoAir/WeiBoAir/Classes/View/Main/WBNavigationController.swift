@@ -41,6 +41,9 @@ class WBNavigationController: UINavigationController {
         
       
        
+        //let leftBtn = UIBarButtonItem(title: strTitle, style: .plain, target: self, action: #selector(popToParent))
+        let leftBtn = UIBarButtonItem(title: strTitle, fontSize: 16, target: self, action: #selector(popToParent), isBack: true)
+        viewController.navigationItem.leftBarButtonItem = leftBtn
 
         super.pushViewController(viewController, animated: true)
     }
