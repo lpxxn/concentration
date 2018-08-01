@@ -54,7 +54,6 @@ class WBHomeViewController: WBBaseViewController {
 extension WBHomeViewController {
     @objc override func setupUI() {
         super.setupUI()
-        
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", style: .plain, target: self, action: #selector(showFrends))
+        navigationItem.leftBarButtonItem =  UIBarButtonItem(title: "好友", fontSize: 16, target: self, action: #selector(showFrends))
     }
 }

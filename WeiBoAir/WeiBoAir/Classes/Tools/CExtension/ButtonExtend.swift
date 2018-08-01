@@ -40,4 +40,13 @@ extension UIButton {
         button.sizeToFit()
         return button
     }
+    
+    static func lp_textWidthImgButton(title: String, fontSize: CGFloat, normalColor: UIColor, highlightedColor: UIColor, backgroundImgName: String, imgName: String) -> UIButton {
+        let btn = lp_textButton(title: title, fontSize: fontSize, normalColor: normalColor, highlightedColor: highlightedColor, backgroundImgName: backgroundImgName)
+        
+        btn.setImage(UIImage(named: imgName), for: .normal)
+        btn.setImage(UIImage(named: "\(imgName)_highlighted"), for: .highlighted)
+        btn.sizeToFit()
+        return btn
+    }
 }
