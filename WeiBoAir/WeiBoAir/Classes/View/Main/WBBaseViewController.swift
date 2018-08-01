@@ -45,7 +45,7 @@ class WBBaseViewController: UIViewController {
         //设置navBar 的标题Title字体颜色
         navigationBar?.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.darkGray]
         //设置系统按钮的文字渲染颜色  只对系统.plain 的方法有效
-        navigationBar?.tintColor = UIColor.orange
+        //navigationBar?.tintColor = UIColor.orange
         
         navigationBar?.translatesAutoresizingMaskIntoConstraints = false
         navigationBar?.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true

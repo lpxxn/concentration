@@ -24,8 +24,9 @@ class WBNavigationController: UINavigationController {
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         print("pushViewController  child count: \(childViewControllers.count)")
-        var strTitle = "返回"
+        
         if childViewControllers.count > 0 {
+            var strTitle = "返回"
             viewController.hidesBottomBarWhenPushed = true
             if let bvc = (viewController as? WBBaseViewController) {
             interactivePopGestureRecognizer?.delegate = bvc
@@ -33,11 +34,14 @@ class WBNavigationController: UINavigationController {
                     strTitle = childViewControllers.first?.title ?? strTitle
                 }
             }
+            //let leftBtn = UIBarButtonItem(title: strTitle, style: .plain, target: self, action: #selector(popToParent))
+            let leftBtn = UIBarButtonItem(title: strTitle, fontSize: 16, target: self, action: #selector(popToParent), isBack: true)
+            viewController.navigationItem.leftBarButtonItem = leftBtn
         }
-        let leftBtn = UIBarButtonItem(title: strTitle, style: .plain, target: self, action: #selector(popToParent))
-        viewController.navigationItem.leftBarButtonItem = leftBtn
-//        viewController.navigationItem.backBarButtonItem = leftBtn
-//        viewController.navigationItem.leftItemsSupplementBackButton = true
+        
+      
+       
+
         super.pushViewController(viewController, animated: true)
     }
     
