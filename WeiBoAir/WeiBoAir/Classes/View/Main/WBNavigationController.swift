@@ -19,19 +19,22 @@ class WBNavigationController: UINavigationController {
         // Do any additional setup after loading the view.
         //  隐藏默认的条
         isNavigationBarHidden = true
-        
-        
-
     }
-    
     
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         print("pushViewController  child count: \(childViewControllers.count)")
+        var strTitle = "返回"
         if childViewControllers.count > 0 {
             viewController.hidesBottomBarWhenPushed = true
+            if let bvc = (viewController as? WBBaseViewController) {
+            interactivePopGestureRecognizer?.delegate = bvc
+                if childViewControllers.count == 1 {
+                    strTitle = childViewControllers.first?.title ?? strTitle
+                }
+            }
         }
-        var leftBtn = UIBarButtonItem(title: "返回", style: .plain, target: self, action: #selector(popToParent))
+        let leftBtn = UIBarButtonItem(title: strTitle, style: .plain, target: self, action: #selector(popToParent))
         viewController.navigationItem.leftBarButtonItem = leftBtn
 //        viewController.navigationItem.backBarButtonItem = leftBtn
 //        viewController.navigationItem.leftItemsSupplementBackButton = true

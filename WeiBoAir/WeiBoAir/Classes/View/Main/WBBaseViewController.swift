@@ -35,76 +35,29 @@ class WBBaseViewController: UIViewController {
     
     
     private func setupNavigationBar() {
-//        var topSafeArea: CGFloat
-//        var bottomSafeArea: CGFloat
-//
-//        if #available(iOS 11.0, *) {
-//            topSafeArea = view.safeAreaInsets.top
-//            bottomSafeArea = view.safeAreaInsets.bottom
-//        } else {
-//            topSafeArea = topLayoutGuide.length
-//            bottomSafeArea = bottomLayoutGuide.length
-//        }
-        
-
-        
-        /*
-         THe layout is incorrect. The navigation bar height should be 44pts tall (not 64) and the frame.origin.y should be placed at topLayoutGuide.height. Your navigation bar delegate should then implement -positionForBar: to return UIBarPositionTopAttached.
-         
-         You can see how UINavigationController places the navigation bar as an example, but it is almost certainly simpler to just use a UINavigationController to get the navigation bar placed correctly instead.
-         
-        */
         
         navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 64))
         navigationBar!.contentMode = .bottom
         view.addSubview(navigationBar!)
         navigationBar!.items = [navigationItem]
-        
+        //设置 navBar 的渲染颜色 发白的时候用
+        //navigationBar?.barTintColor = UIColor(rgb: 0xF6F6F6)
+        //设置navBar 的标题Title字体颜色
+        navigationBar?.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.darkGray]
+        //设置系统按钮的文字渲染颜色  只对系统.plain 的方法有效
+        navigationBar?.tintColor = UIColor.orange
         
         navigationBar?.translatesAutoresizingMaskIntoConstraints = false
-        
-        
-//        if #available(iOS 11, *) {
-//           let guide = view.safeAreaLayoutGuide.bottomAnchor
-//           let height = (navigationBar?.frame.height)! - CGFloat(12)
-//            navigationBar?.topAnchor.constraint(equalTo: guide, constant: 0)
-//            navigationBar?.heightAnchor.constraint(equalToConstant: height).isActive = true
-//
-//            //            NSLayoutConstraint.activate([
-//            ////                self.yourTableView.topAnchor.constraint(equalTo: guide, constant: height)
-//            ////                ])
-//        }
-        
-//        if #available(iOS 11.0, *) {
-//
-//            navigationBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-//        }
-        
-        
         navigationBar?.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         navigationBar?.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-       
         if #available(iOS 11.0, *) {
             print("ios 11 version.")
             navigationBar?.heightAnchor.constraint(equalToConstant: 44).isActive = true
             navigationBar?.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         } else {
-            // Fallback on earlier versions
             navigationBar?.heightAnchor.constraint(equalToConstant: 64).isActive = true
         }
         navigationBar?.installBlurEffect()
-        
-        
-        
-//
-//        if let window = UIApplication.shared.keyWindow {
-//            NSLayoutConstraint.activate([
-//                navigationBar.topAnchor.constraint(equalTo: window.safeAreaLayoutGuide.bottomAnchor, constant: 0),
-//                navigationBar.leadingAnchor.constraint(equalTo: window.safeAreaLayoutGuide.leadingAnchor),
-//                navigationBar.trailingAnchor.constraint(equalTo: window.safeAreaLayoutGuide.trailingAnchor),
-//                navigationBar.heightAnchor.constraint(equalToConstant: 64)
-//                ])
-//        }
 
     }
     
