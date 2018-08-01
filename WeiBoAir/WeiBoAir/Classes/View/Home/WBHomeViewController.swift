@@ -41,5 +41,20 @@ class WBHomeViewController: WBBaseViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    @objc private func showFrends() {
+        print(#function)
+        let vc = WBDemoViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 
+}
+
+extension WBHomeViewController {
+    @objc override func setupUI() {
+        super.setupUI()
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", style: .plain, target: self, action: #selector(showFrends))
+    }
 }

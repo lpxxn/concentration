@@ -22,8 +22,10 @@ class WBBaseViewController: UIViewController {
         view.backgroundColor = .random
         
         // Do any additional setup after loading the view.
-       setupNavigationBar()
-
+        setupNavigationBar()
+        setupUI()
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self;
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -83,10 +85,12 @@ class WBBaseViewController: UIViewController {
         navigationBar?.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
        
         if #available(iOS 11.0, *) {
+            print("ios 11 version.")
             navigationBar?.heightAnchor.constraint(equalToConstant: 44).isActive = true
             navigationBar?.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         } else {
             // Fallback on earlier versions
+            navigationBar?.heightAnchor.constraint(equalToConstant: 64).isActive = true
         }
         navigationBar?.installBlurEffect()
         
@@ -118,3 +122,27 @@ class WBBaseViewController: UIViewController {
     */
 
 }
+
+
+extension WBBaseViewController {
+    @objc func setupUI() {
+        print("Base View setupUI")
+    }
+}
+
+
+extension WBBaseViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        //return true
+        return (self.navigationController?.childViewControllers.count ?? 0) > 1
+    }
+}
+
+
+
+
+
+
+
+
+
