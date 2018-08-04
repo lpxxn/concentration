@@ -16,6 +16,8 @@ class WBBaseViewController: UIViewController {
     
     lazy var navigationItem2: UINavigationItem = UINavigationItem()
     
+    var tableView: UITableView?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +52,47 @@ extension WBBaseViewController {
     @objc func setupUI() {
         print("Base View setupUI")
         view.backgroundColor = .random
+        
+        // 取消自动缩进
+        automaticallyAdjustsScrollViewInsets = false
+        
         setupNavigationBar()
+        setupTableView()
+        loadData()
+    }
+    
+    private func setupTableView() {
+        
+        tableView = UITableView(frame: view.bounds, style: .plain)
+        //view.insertSubview(tableView!, belowSubview: navigationBar!)
+        //
+        view.addSubview(tableView!)
+        
+        tableView?.translatesAutoresizingMaskIntoConstraints = false
+        if let nav = navigationBar {
+            tableView!.topAnchor.constraint(equalTo: nav.bottomAnchor).isActive = true
+        }
+        tableView!.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        tableView!.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        if let tab = tabBarController?.tabBar, !hidesBottomBarWhenPushed {
+            //tableView!.bottomAnchor.constraint(equalTo: tab.topAnchor).isActive = true
+            tableView!.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -tab.bounds.height).isActive = true
+        } else {
+             tableView!.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        }
+        
+        tableView?.delegate = self
+        tableView?.dataSource = self
+        
+        // 设置内容缩进
+//        tableView?.contentInset = UIEdgeInsets(top: navigationBar?.bounds.height ?? 0,
+//                                               left: 0,
+//                                               bottom: tabBarController?.tabBar.bounds.height ?? 49,
+//                                               right: 0)
+    }
+    
+    @objc func loadData() {
+        
     }
 }
 
@@ -80,6 +122,7 @@ extension WBBaseViewController {
             navigationBar?.heightAnchor.constraint(equalToConstant: 64).isActive = true
         }
         navigationBar?.installBlurEffect()
+        navigationBar?.installBlurEffect()
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self;
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
@@ -96,8 +139,14 @@ extension WBBaseViewController: UIGestureRecognizerDelegate {
 
 
 
-extension WBBaseViewController: UITableViewDelegate {
+extension WBBaseViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
 }
 
 

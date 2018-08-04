@@ -42,6 +42,9 @@ extension UINavigationBar {
         blurView.frame = blurFrame
         blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(blurView)
-        blurView.layer.zPosition = -1
+
+        
+        blurView.layer.zPosition = -10
+        //sendSubview(toBack: blurView)
     }
 }
