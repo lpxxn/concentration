@@ -19,13 +19,10 @@ class WBBaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .random
-        
         // Do any additional setup after loading the view.
-        setupNavigationBar()
+       
         setupUI()
-        self.navigationController?.interactivePopGestureRecognizer?.delegate = self;
-        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,6 +31,31 @@ class WBBaseViewController: UIViewController {
     }
     
     
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
+
+
+extension WBBaseViewController {
+    @objc func setupUI() {
+        print("Base View setupUI")
+        view.backgroundColor = .random
+        setupNavigationBar()
+    }
+}
+
+// MARK: - NavigatioinBar
+extension WBBaseViewController {
     private func setupNavigationBar() {
         
         navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 64))
@@ -58,29 +80,10 @@ class WBBaseViewController: UIViewController {
             navigationBar?.heightAnchor.constraint(equalToConstant: 64).isActive = true
         }
         navigationBar?.installBlurEffect()
-
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self;
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
-
-
-extension WBBaseViewController {
-    @objc func setupUI() {
-        print("Base View setupUI")
-    }
 }
 
 
@@ -93,6 +96,9 @@ extension WBBaseViewController: UIGestureRecognizerDelegate {
 
 
 
+extension WBBaseViewController: UITableViewDelegate {
+    
+}
 
 
 

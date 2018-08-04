@@ -30,11 +30,14 @@ extension UINavigationBar {
     func installBlurEffect() {
         isTranslucent = true
         setBackgroundImage(UIImage(), for: .default)
+        shadowImage = UIImage()
+//        backgroundColor = UIColor(
         let statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
         var blurFrame = bounds
         blurFrame.size.height += statusBarHeight
         blurFrame.origin.y -= statusBarHeight
-        let blurView  = UIVisualEffectView(effect: UIBlurEffect(style: .prominent))
+        
+        let blurView  = UIVisualEffectView(effect: UIBlurEffect(style: .light))
         blurView.isUserInteractionEnabled = false
         blurView.frame = blurFrame
         blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

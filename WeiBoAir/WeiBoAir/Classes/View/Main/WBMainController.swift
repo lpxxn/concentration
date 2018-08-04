@@ -25,6 +25,11 @@ class WBMainController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -88,7 +93,6 @@ extension WBMainController {
         return nav
     }
 }
-
 
 
 
