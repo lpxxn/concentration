@@ -120,6 +120,7 @@ extension WBBaseViewController {
             navigationBar?.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         } else {
             navigationBar?.heightAnchor.constraint(equalToConstant: 64).isActive = true
+            navigationBar?.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         }
         navigationBar?.installBlurEffect()
         navigationBar?.installBlurEffect()
