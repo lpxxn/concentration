@@ -17,6 +17,7 @@ class WBBaseViewController: UIViewController {
     lazy var navigationItem2: UINavigationItem = UINavigationItem()
     
     var tableView: UITableView?
+    var refreshControl: UIRefreshControl?
     
     
     override func viewDidLoad() {
@@ -61,6 +62,8 @@ extension WBBaseViewController {
         loadData()
     }
     
+    
+    // MARK: setupTableView
     private func setupTableView() {
         
         tableView = UITableView(frame: view.bounds, style: .plain)
@@ -89,6 +92,12 @@ extension WBBaseViewController {
 //                                               left: 0,
 //                                               bottom: tabBarController?.tabBar.bounds.height ?? 49,
 //                                               right: 0)
+        
+        refreshControl = UIRefreshControl()
+        tableView?.addSubview(refreshControl!)
+        
+        // 添加监听刷新方法
+        refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
     }
     
     @objc func loadData() {
@@ -139,7 +148,7 @@ extension WBBaseViewController: UIGestureRecognizerDelegate {
 }
 
 
-
+// MARK: -- TabelVew
 extension WBBaseViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0

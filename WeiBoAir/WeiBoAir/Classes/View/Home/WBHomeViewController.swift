@@ -36,10 +36,19 @@ class WBHomeViewController: WBBaseViewController {
     }
     
     override func loadData() {
-        for i in 0..<15 {
-            // 插入到数组的顶部
-            statusList.insert(i.description, at: 0)
+        print("开始加载数据")
+        // 模拟延时加载数据 dispach_after
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            for i in 0..<15 {
+                // 插入到数组的顶部
+                self.statusList.insert(i.description, at: 0)
+            }
+            print("刷新")
+            // 结束刷新控件
+            self.refreshControl?.endRefreshing()
+            self.tableView?.reloadData()
         }
+       
     }
 
     /*
