@@ -198,12 +198,20 @@
 		0A394815210C771000DD8ACE /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				0A2463D4210CACD2006DF5BE /* WBMainController.swift */,
-				0A2463D6210CAD45006DF5BE /* WBNavigationController.swift */,
-				0A2463D8210CAD8D006DF5BE /* WBBaseViewController.swift */,
+				0AC82E5221184EA10056461B /* MainBaseController */,
 				0AD5AB00211154BC00990046 /* Test */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		0AC82E5221184EA10056461B /* MainBaseController */ = {
+			isa = PBXGroup;
+			children = (
+				0A2463D4210CACD2006DF5BE /* WBMainController.swift */,
+				0A2463D6210CAD45006DF5BE /* WBNavigationController.swift */,
+				0A2463D8210CAD8D006DF5BE /* WBBaseViewController.swift */,
+			);
+			path = MainBaseController;
 			sourceTree = "<group>";
 		};
 		0AD5AB00211154BC00990046 /* Test */ = {

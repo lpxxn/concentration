@@ -39,7 +39,7 @@ class WBHomeViewController: WBBaseViewController {
         print("开始加载数据")
         // 模拟延时加载数据 dispach_after
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            for i in 0..<15 {
+            for i in 0..<25 {
                 // 插入到数组的顶部
                 self.statusList.insert(i.description, at: 0)
             }
@@ -70,6 +70,8 @@ class WBHomeViewController: WBBaseViewController {
 
 }
 
+
+// MARK: - setupUI
 extension WBHomeViewController {
     @objc override func setupUI() {
         super.setupUI()
@@ -91,6 +93,13 @@ extension WBHomeViewController {
         
         return cell
         
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let lastElement = statusList.count - 1
+        if !isPullup && indexPath.row == lastElement {
+            print("-------------------")
+        }
     }
 }
 

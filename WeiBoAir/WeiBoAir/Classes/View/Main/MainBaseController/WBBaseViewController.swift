@@ -12,13 +12,17 @@ class WBBaseViewController: UIViewController {
 
 //    lazy var navigationBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.lp_screenWidth, height: 64))
     
+    lazy var isLogin: Bool = false
+    
     var navigationBar: UINavigationBar?
     
     lazy var navigationItem2: UINavigationItem = UINavigationItem()
     
     var tableView: UITableView?
+    // 刷新控件
     var refreshControl: UIRefreshControl?
-    
+    // 上拉刷新标记
+    lazy var isPullup = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,53 +56,24 @@ class WBBaseViewController: UIViewController {
 extension WBBaseViewController {
     @objc func setupUI() {
         print("Base View setupUI")
-        view.backgroundColor = .random
+        //view.backgroundColor = .random
         
         // 取消自动缩进
         automaticallyAdjustsScrollViewInsets = false
         
         setupNavigationBar()
-        setupTableView()
-        loadData()
-    }
-    
-    
-    // MARK: setupTableView
-    private func setupTableView() {
-        
-        tableView = UITableView(frame: view.bounds, style: .plain)
-        //view.insertSubview(tableView!, belowSubview: navigationBar!)
-        //
-        view.addSubview(tableView!)
-        
-        tableView?.translatesAutoresizingMaskIntoConstraints = false
-        if let nav = navigationBar {
-            tableView!.topAnchor.constraint(equalTo: nav.bottomAnchor).isActive = true
-        }
-        tableView!.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-        tableView!.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        if let tab = tabBarController?.tabBar, !hidesBottomBarWhenPushed {
-            //tableView!.bottomAnchor.constraint(equalTo: tab.topAnchor).isActive = true
-            tableView!.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -tab.bounds.height).isActive = true
+        if isLogin {
+            setupTableView()
+            loadData()
         } else {
-             tableView!.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+            let view = UIView()
+            view.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+                
+            addView(subView: view)
         }
-        
-        tableView?.delegate = self
-        tableView?.dataSource = self
-        
-        // 设置内容缩进
-//        tableView?.contentInset = UIEdgeInsets(top: navigationBar?.bounds.height ?? 0,
-//                                               left: 0,
-//                                               bottom: tabBarController?.tabBar.bounds.height ?? 49,
-//                                               right: 0)
-        
-        refreshControl = UIRefreshControl()
-        tableView?.addSubview(refreshControl!)
-        
-        // 添加监听刷新方法
-        refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
     }
+    
+
     
     @objc func loadData() {
         
@@ -148,14 +123,86 @@ extension WBBaseViewController: UIGestureRecognizerDelegate {
 }
 
 
+// MARK: - AddSubView
+extension WBBaseViewController {
+    private func addView(subView: UIView) {
+        view.addSubview(subView)
+        
+        subView.translatesAutoresizingMaskIntoConstraints = false
+        if let nav = navigationBar {
+            subView.topAnchor.constraint(equalTo: nav.bottomAnchor).isActive = true
+        } else {
+            subView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        }
+        subView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        subView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        if let tab = tabBarController?.tabBar, !hidesBottomBarWhenPushed {
+            //tableView!.bottomAnchor.constraint(equalTo: tab.topAnchor).isActive = true
+            subView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -tab.bounds.height).isActive = true
+        } else {
+            subView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        }
+        
+    }
+}
+
+
 // MARK: -- TabelVew
 extension WBBaseViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+//        // 1. 判断indexPath 是否是最后一行
+//        // (indexPath.selection(最大) / indexPath.row(最后一行))
+//        // 1> row
+//        let row = indexPath.row
+//        let section = tableView.numberOfSections - 1
+//        if row < 0 || section < 0 {
+//            return
+//        }
+//        
+//        // 行数
+//        let count = tableView.numberOfRows(inSection: section)
+//        // 如果是最后一行，同时没有上拉刷新
+//        if (row == (count - 1)) && !isPullup {
+//            print("上拉刷新")
+//        }
+    }
+    
+    // MARK: setupTableView
+    private func setupTableView() {
+        
+        tableView = UITableView(frame: view.bounds, style: .plain)
+        //view.insertSubview(tableView!, belowSubview: navigationBar!)
+        addView(subView: tableView!)
+        //tableView!.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        tableView?.delegate = self
+        tableView?.dataSource = self
+        
+        // 设置内容缩进
+        //        tableView?.contentInset = UIEdgeInsets(top: navigationBar?.bounds.height ?? 0,
+        //                                               left: 0,
+        //                                               bottom: tabBarController?.tabBar.bounds.height ?? 49,
+        //                                               right: 0)
+        
+        //        tableView?.contentInset = UIEdgeInsets(top: 0,
+        //                                               left: 0,
+        //                                               bottom: tabBarController?.tabBar.bounds.height ?? 49,
+        //                                               right: 0)
+        
+        refreshControl = UIRefreshControl()
+        tableView?.addSubview(refreshControl!)
+        
+        // 添加监听刷新方法
+        refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
     }
 }
 
