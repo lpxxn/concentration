@@ -18,6 +18,9 @@ class WBBaseViewController: UIViewController {
     
     lazy var navigationItem2: UINavigationItem = UINavigationItem()
     
+    var visitorInfoDic: [String:String]?
+    
+    
     var tableView: UITableView?
     // 刷新控件
     var refreshControl: UIRefreshControl?
@@ -57,7 +60,7 @@ extension WBBaseViewController {
     @objc func setupUI() {
         print("Base View setupUI")
         //view.backgroundColor = .random
-        
+        view.backgroundColor = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
         // 取消自动缩进
         automaticallyAdjustsScrollViewInsets = false
         
@@ -66,10 +69,7 @@ extension WBBaseViewController {
             setupTableView()
             loadData()
         } else {
-            
-            let v = WBVisitorView(frame: view.bounds)
-                
-            addView(subView: v)
+           setupVisitorView()
         }
     }
     
@@ -106,7 +106,7 @@ extension WBBaseViewController {
             navigationBar?.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         }
         navigationBar?.installBlurEffect()
-        navigationBar?.installBlurEffect()
+        //navigationBar?.installBlurEffect()
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self;
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
@@ -176,7 +176,7 @@ extension WBBaseViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     // MARK: setupTableView
-    private func setupTableView() {
+    @objc func setupTableView() {
         
         tableView = UITableView(frame: view.bounds, style: .plain)
         //view.insertSubview(tableView!, belowSubview: navigationBar!)
@@ -202,6 +202,43 @@ extension WBBaseViewController: UITableViewDelegate, UITableViewDataSource {
         
         // 添加监听刷新方法
         refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
+    }
+}
+
+
+// MARK: - VisitorView
+extension WBBaseViewController {
+    @objc func setupVisitorView() {
+        let v = WBVisitorView(frame: view.bounds)
+        
+        addView(subView: v)
+        v.visitorInfo = visitorInfoDic
+        v.registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
+        v.loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
+        
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", target: self, action: #selector(register))
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", target: self, action: #selector(login))
+        
+        let registerButton: UIButton = UIButton.lp_textButton(title: "注册", fontSize: 16, normalColor: UIColor.orange, highlightedColor: .black, backgroundImgName: "")
+        let loginButton: UIButton = UIButton.lp_textButton(title: "登录", fontSize: 16, normalColor: UIColor.orange, highlightedColor: .black, backgroundImgName: "")
+        
+        registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: registerButton)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: loginButton)
+    }
+    
+    
+    @objc func login() {
+        print(#function)
+        print("login")
+        //isLogin = true
+    }
+    
+    @objc func register() {
+        print(#function)
+        print("register")
+        //isLogin = false
     }
 }
 

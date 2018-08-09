@@ -18,12 +18,7 @@ class WBHomeViewController: WBBaseViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        let btn = UIButton.lp_textButton(title: "liPeng", fontSize: 16, normalColor: .black, highlightedColor: .blue, backgroundImgName: "")
-        btn.setImage(UIImage(named: "navigationbar_friendsearch"), for: .normal)
-        btn.setImage(UIImage(named: "navigationbar_back_withtext_highlighted"), for: .highlighted)
-        btn.center = view.center
-        btn.sizeToFit()
-        view.addSubview(btn)
+
         
         print("Screen size width", UIScreen.main.lp_screenWidth, " \(UIScreen.main.bounds.size.width)  height: ", UIScreen.main.lp_screenHeight, " scale ", UIScreen.main.lp_screenScale)
         
@@ -75,12 +70,12 @@ class WBHomeViewController: WBBaseViewController {
 extension WBHomeViewController {
     @objc override func setupUI() {
         super.setupUI()
-        navigationItem.leftBarButtonItem =  UIBarButtonItem(title: "好友", fontSize: 16, target: self, action: #selector(showFrends))
-        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
     }
 }
 
 
+
+// MARK: - TableView
 extension WBHomeViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return statusList.count
@@ -100,6 +95,12 @@ extension WBHomeViewController {
         if !isPullup && indexPath.row == lastElement {
             print("-------------------")
         }
+    }
+    
+    override func setupTableView() {
+        super.setupTableView()
+        navigationItem.leftBarButtonItem =  UIBarButtonItem(title: "好友", fontSize: 16, target: self, action: #selector(showFrends))
+        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
     }
 }
 

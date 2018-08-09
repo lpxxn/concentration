@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A15C8A3211C359E001480A4 /* LabelExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A15C8A2211C359E001480A4 /* LabelExtend.swift */; };
 		0A2463D3210CAB01006DF5BE /* BundleExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2463D2210CAB01006DF5BE /* BundleExtend.swift */; };
 		0A2463D5210CACD2006DF5BE /* WBMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2463D4210CACD2006DF5BE /* WBMainController.swift */; };
 		0A2463D7210CAD45006DF5BE /* WBNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2463D6210CAD45006DF5BE /* WBNavigationController.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A15C8A2211C359E001480A4 /* LabelExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelExtend.swift; sourceTree = "<group>"; };
 		0A2463D2210CAB01006DF5BE /* BundleExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtend.swift; sourceTree = "<group>"; };
 		0A2463D4210CACD2006DF5BE /* WBMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBMainController.swift; sourceTree = "<group>"; };
 		0A2463D6210CAD45006DF5BE /* WBNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBNavigationController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				0A2A0CA2210D66710077F4AA /* ButtonExtend.swift */,
 				0AA900E221103C17009ECD30 /* ScreenExtend.swift */,
 				0AD5AB012111B42C00990046 /* UIBarButtonItemExtend.swift */,
+				0A15C8A2211C359E001480A4 /* LabelExtend.swift */,
 			);
 			path = CExtension;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				0AD5AB022111B42C00990046 /* UIBarButtonItemExtend.swift in Sources */,
 				0AD5AAFF211152F200990046 /* WBDemoViewController.swift in Sources */,
 				0A2463D9210CAD8D006DF5BE /* WBBaseViewController.swift in Sources */,
+				0A15C8A3211C359E001480A4 /* LabelExtend.swift in Sources */,
 				0A2A0CA0210D61C00077F4AA /* WBNetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

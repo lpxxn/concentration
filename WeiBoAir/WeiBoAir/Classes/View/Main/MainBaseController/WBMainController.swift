@@ -54,11 +54,11 @@ extension WBMainController {
     
     private func setupChildControllers() {
         let array = [
-            ["clsName": "WBHomeViewController", "title": "首页", "imageName": "home"],
-            ["clsName": "WBMessageViewController", "title": "消息", "imageName": "message_center"],
+            ["clsName": "WBHomeViewController", "title": "首页", "imageName": "home", "visitorInfo": ["imgName":"", "msg": "一去二三里，山村四五家。亭台六七座，八九十支花"]],
+            ["clsName": "WBMessageViewController", "title": "消息", "imageName": "message_center", "visitorInfo": ["imgName":"visitordiscover_image_message", "msg": "千山鸟飞绝，万径人踪来，孤舟蓑笠翁，独吊寒江雪。"]],
             ["clsName": "UIViewController"],
-            ["clsName": "WBDiscoverViewController", "title": "发现", "imageName": "discover"],
-            ["clsName": "WBProfileViewController", "title": "资料", "imageName": "profile"],
+            ["clsName": "WBDiscoverViewController", "title": "发现", "imageName": "discover", "visitorInfo": ["imgName":"visitordiscover_image_message", "msg": "一去二三里，山村四五家。亭台六七座，八九十支花"]],
+            ["clsName": "WBProfileViewController", "title": "资料", "imageName": "profile", "visitorInfo": ["imgName":"visitordiscover_image_profile", "msg": "一去二三里，山村四五家。亭台六七座，八九十支花"]],
         ]
         var arrayM = [UIViewController]()
         for dict in array {
@@ -68,19 +68,20 @@ extension WBMainController {
         viewControllers = arrayM
     }
     
-    private func controller(dict: [String: String]) -> UIViewController {
-        guard  let className = dict["clsName"],
-            let title = dict["title"],
-            let imgName = dict["imageName"],
-            let cls = NSClassFromString("\(Bundle.main.NS).\(className)") as? UIViewController.Type
+    private func controller(dict: [String: Any]) -> UIViewController {
+        guard  let className = dict["clsName"] as? String,
+            let title = dict["title"] as? String,
+            let imgName = dict["imageName"] as? String,
+            let cls = NSClassFromString("\(Bundle.main.NS).\(className)") as? WBBaseViewController.Type,
+            let visitorDic = dict["visitorInfo"] as? [String: String]
             else {
             return UIViewController()
         }
         
         let vc = cls.init()
         vc.title = title
-        
 
+        vc.visitorInfoDic = visitorDic
         
         let nav = WBNavigationController(rootViewController: vc)
         nav.tabBarItem.image = UIImage(named: "tabbar_\(imgName)")
