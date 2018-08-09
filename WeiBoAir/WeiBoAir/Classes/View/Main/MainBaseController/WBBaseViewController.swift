@@ -66,15 +66,14 @@ extension WBBaseViewController {
             setupTableView()
             loadData()
         } else {
-            let view = UIView()
-            view.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+            
+            let v = WBVisitorView(frame: view.bounds)
                 
-            addView(subView: view)
+            addView(subView: v)
         }
     }
     
 
-    
     @objc func loadData() {
         
     }
