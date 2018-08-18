@@ -19,6 +19,17 @@ class WBHomeViewController: WBBaseViewController {
         
         // Do any additional setup after loading the view.
 
+        // afn 加载网络数据
+        let url = "https://api.weibo.com/2/statuses/home_timeline.json"
+        let params = ["access_token":"2.00ROiI2CFsvSQD1314a596f5066RYj"]
+        
+//        WBNetworkManager.shared.request(url: url, paramters: params as [String : AnyObject]) { (json, t) in
+//            print("\(json)")
+//        }
+ 
+        WBNetworkManager.shared.request(method: .GET, url: url, paramters: params as [String : AnyObject]) { (json, isSuccess) in
+            print("\(json)")
+        }
         
         print("Screen size width", UIScreen.main.lp_screenWidth, " \(UIScreen.main.bounds.size.width)  height: ", UIScreen.main.lp_screenHeight, " scale ", UIScreen.main.lp_screenScale)
         
