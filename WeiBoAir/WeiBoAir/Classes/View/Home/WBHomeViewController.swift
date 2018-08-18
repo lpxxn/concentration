@@ -12,7 +12,8 @@ private let cellId = "cellId"
 
 class WBHomeViewController: WBBaseViewController {
 
-    private lazy var statusList = [String]()
+    // 列表视图模型
+    private lazy var listViewModel = WBStatusListViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,16 +21,12 @@ class WBHomeViewController: WBBaseViewController {
         // Do any additional setup after loading the view.
 
         // afn 加载网络数据
-        let url = "https://api.weibo.com/2/statuses/home_timeline.json"
-        let params = ["access_token":"2.00ROiI2CFsvSQD1314a596f5066RYj"]
-        
+
 //        WBNetworkManager.shared.request(url: url, paramters: params as [String : AnyObject]) { (json, t) in
 //            print("\(json)")
 //        }
  
-        WBNetworkManager.shared.request(method: .GET, url: url, paramters: params as [String : AnyObject]) { (json, isSuccess) in
-            print("\(json)")
-        }
+       
         
         print("Screen size width", UIScreen.main.lp_screenWidth, " \(UIScreen.main.bounds.size.width)  height: ", UIScreen.main.lp_screenHeight, " scale ", UIScreen.main.lp_screenScale)
         
@@ -43,17 +40,22 @@ class WBHomeViewController: WBBaseViewController {
     
     override func loadData() {
         print("开始加载数据")
-        // 模拟延时加载数据 dispach_after
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            for i in 0..<25 {
-                // 插入到数组的顶部
-                self.statusList.insert(i.description, at: 0)
-            }
-            print("刷新")
-            // 结束刷新控件
+        
+        listViewModel.loadStatus { (isSuccess) in
             self.refreshControl?.endRefreshing()
             self.tableView?.reloadData()
         }
+        // 模拟延时加载数据 dispach_after
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//            for i in 0..<25 {
+//                // 插入到数组的顶部
+//                self.statusList.insert(i.description, at: 0)
+//            }
+//            print("刷新")
+//            // 结束刷新控件
+//            self.refreshControl?.endRefreshing()
+//            self.tableView?.reloadData()
+//        }
        
     }
 
@@ -89,20 +91,20 @@ extension WBHomeViewController {
 // MARK: - TableView
 extension WBHomeViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return statusList.count
+        return listViewModel.statusList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         
-        cell.textLabel?.text = statusList[indexPath.row]
+        cell.textLabel?.text = listViewModel.statusList[indexPath.row].text
         
         return cell
         
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let lastElement = statusList.count - 1
+        let lastElement = listViewModel.statusList.count - 1
         if !isPullup && indexPath.row == lastElement {
             print("-------------------")
         }

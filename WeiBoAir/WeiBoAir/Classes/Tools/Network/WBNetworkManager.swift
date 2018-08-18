@@ -16,6 +16,8 @@ enum WBHTTPMethod {
 
 class WBNetworkManager: AFHTTPSessionManager {
     
+    
+    
     static let shared: WBNetworkManager = {
         let instance = WBNetworkManager()
         //instance.responseSerializer.acceptableContentTypes?.insert("text/plain")
@@ -27,13 +29,37 @@ class WBNetworkManager: AFHTTPSessionManager {
         return instance
     }()
     
-    func request(method: WBHTTPMethod = .GET, url: String, paramters:[String:AnyObject]?, completion: @escaping (_ json: Any?, _ isSuccess: Bool)->()) {
+    var accessToken: String? = "2.00ROiI2CFsvSQD1314a596f5066RYj"
+    func tokenRequest(method: WBHTTPMethod = .GET, url: String, params:[String:AnyObject]?, completion: @escaping (_ json: AnyObject?, _ isSuccess: Bool)->()) {
+        
+        guard let token = accessToken else {
+            print("没有Token")
+             // FIXME: 发送通知 提示用户登录
+            completion(nil, false)
+            return
+        }
+        
+        var parameters = params
+        if parameters == nil {
+            parameters = [String: AnyObject]()
+        }
+        parameters!["access_token"] = token as AnyObject
+        
+        request(method: method, url: url, paramters: parameters, completion: completion)
+    }
+    
+    func request(method: WBHTTPMethod = .GET, url: String, paramters:[String:AnyObject]?, completion: @escaping (_ json: AnyObject?, _ isSuccess: Bool)->()) {
         let success = { (task: URLSessionTask, json: Any?) -> () in
-            
-            completion(json, true)
+            let str = String(describing: json)
+            completion(json as AnyObject, true)
         }
         
         let failure = { (task: URLSessionTask?, error: Error) -> () in
+            
+            if (task?.response as? HTTPURLResponse)?.statusCode == 403 {
+                
+                // FIXME: 发送通知 提示
+            }
             print("error: \(error)")
             completion(nil, false)
         }

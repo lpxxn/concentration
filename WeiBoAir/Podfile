@@ -13,4 +13,7 @@ target 'WeiBoAir' do
   pod “FMDB”
   pod “SVProgressHUD”
   pod “pop”
+  pod 'SwiftyJSON', '~> 4.0'
+  pod 'HandyJSON', '~> 4.1.1'
+  pod 'Alamofire', '~> 4.7'
 end

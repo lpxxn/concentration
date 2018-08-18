@@ -23,6 +23,9 @@
 		0A3947F1210C676800DD8ACE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3947F0210C676800DD8ACE /* AppDelegate.swift */; };
 		0A3947F6210C676800DD8ACE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A3947F4210C676800DD8ACE /* Main.storyboard */; };
 		0A3947F8210C676B00DD8ACE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A3947F7210C676B00DD8ACE /* Assets.xcassets */; };
+		0A7AAEE52127B79E00FF3244 /* WBNetworkManagerExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7AAEE42127B79E00FF3244 /* WBNetworkManagerExtend.swift */; };
+		0A7AAEE72128162900FF3244 /* WBStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7AAEE62128162900FF3244 /* WBStatus.swift */; };
+		0A7AAEE92128170B00FF3244 /* WBStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7AAEE82128170B00FF3244 /* WBStatusListViewModel.swift */; };
 		0AA900E321103C17009ECD30 /* ScreenExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA900E221103C17009ECD30 /* ScreenExtend.swift */; };
 		0AC82E57211850030056461B /* WBVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC82E56211850030056461B /* WBVisitorView.swift */; };
 		0AD5AAFF211152F200990046 /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD5AAFE211152F200990046 /* WBDemoViewController.swift */; };
@@ -49,6 +52,9 @@
 		0A3947F5210C676800DD8ACE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A3947F7210C676B00DD8ACE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A3947FC210C676B00DD8ACE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A7AAEE42127B79E00FF3244 /* WBNetworkManagerExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBNetworkManagerExtend.swift; sourceTree = "<group>"; };
+		0A7AAEE62128162900FF3244 /* WBStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatus.swift; sourceTree = "<group>"; };
+		0A7AAEE82128170B00FF3244 /* WBStatusListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusListViewModel.swift; sourceTree = "<group>"; };
 		0AA900E221103C17009ECD30 /* ScreenExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenExtend.swift; sourceTree = "<group>"; };
 		0AC82E56211850030056461B /* WBVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBVisitorView.swift; sourceTree = "<group>"; };
 		0AD5AAFE211152F200990046 /* WBDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				0A2A0C9F210D61C00077F4AA /* WBNetworkManager.swift */,
+				0A7AAEE42127B79E00FF3244 /* WBNetworkManagerExtend.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -145,6 +152,7 @@
 		0A39480E210C771000DD8ACE /* ModelView */ = {
 			isa = PBXGroup;
 			children = (
+				0A7AAEE82128170B00FF3244 /* WBStatusListViewModel.swift */,
 			);
 			path = ModelView;
 			sourceTree = "<group>";
@@ -152,6 +160,7 @@
 		0A39480F210C771000DD8ACE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0A7AAEE62128162900FF3244 /* WBStatus.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -348,18 +357,24 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WeiBoAir/Pods-WeiBoAir-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
@@ -389,10 +404,13 @@
 				0A3947F1210C676800DD8ACE /* AppDelegate.swift in Sources */,
 				0A2463D3210CAB01006DF5BE /* BundleExtend.swift in Sources */,
 				0AD5AB022111B42C00990046 /* UIBarButtonItemExtend.swift in Sources */,
+				0A7AAEE72128162900FF3244 /* WBStatus.swift in Sources */,
 				0AD5AAFF211152F200990046 /* WBDemoViewController.swift in Sources */,
 				0A2463D9210CAD8D006DF5BE /* WBBaseViewController.swift in Sources */,
 				0A15C8A3211C359E001480A4 /* LabelExtend.swift in Sources */,
 				0A2A0CA0210D61C00077F4AA /* WBNetworkManager.swift in Sources */,
+				0A7AAEE92128170B00FF3244 /* WBStatusListViewModel.swift in Sources */,
+				0A7AAEE52127B79E00FF3244 /* WBNetworkManagerExtend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
