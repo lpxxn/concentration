@@ -40,8 +40,8 @@ class WBHomeViewController: WBBaseViewController {
     
     override func loadData() {
         print("开始加载数据")
-        
-        listViewModel.loadStatus { (isSuccess) in
+    
+        listViewModel.loadStatus(isPullup: false) { (isSuccess, shouldRefresh)  in
             self.refreshControl?.endRefreshing()
             self.tableView?.reloadData()
         }

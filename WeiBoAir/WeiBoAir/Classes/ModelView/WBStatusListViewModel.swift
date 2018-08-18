@@ -15,8 +15,16 @@ import Foundation
 class WBStatusListViewModel {
     lazy var statusList = [WBStatus]()
     
-    func loadStatus(completion: @escaping (_ isSuccess: Bool) -> ()) {
-        WBNetworkManager.shared.statusList { (list, isSuccess) in
+    func loadStatus(isPullup: Bool, completion: @escaping (_ isSuccess: Bool, _ shouldRefresh: Bool) -> ()) {
+        
+        // 上面的id 是最大的
+        let sinceId = statusList.first?.id ?? 0
+        
+        WBNetworkManager.shared.statusList(sinceId: sinceId, maxId: 0) { (list, isSuccess) in
+            
+            if !isSuccess {
+                completion(false, false)
+            }
             var array = [WBStatus]()
             
             // yymodel 不能用😭
@@ -37,9 +45,12 @@ class WBStatusListViewModel {
                 //将视图模型添加到数组
                 array.append(m)
             }
-            self.statusList += array
-            
-            completion(true)
+            if isPullup {
+                self.statusList += array
+            } else {
+                self.statusList = array + self.statusList
+            }
+            completion(true, true)
         }
     }
 }
