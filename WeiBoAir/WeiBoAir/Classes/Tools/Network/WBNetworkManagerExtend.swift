@@ -32,4 +32,20 @@ extension WBNetworkManager {
           
         }
     }
+    
+    func unreadCount(completion: @escaping (_ count: Int) -> ()) {
+        //let url = "https://api.t.sina.com.cn/statuses/unread.json"
+        //let params = ["source": appKey]
+        
+        let url = "https://rm.api.weibo.com/2/remind/unread_count.json"
+        let params = ["uid": uid]
+        
+        tokenRequest(url: url, params: params as [String : AnyObject]) { (json, isSuccess) in
+            print(json)
+            let dict = json as? [String: AnyObject]
+            let count = dict?["status"] as? Int ?? 0
+            completion(count)
+        }
+        
+    }
 }

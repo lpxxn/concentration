@@ -9,6 +9,8 @@
 import UIKit
 
 class WBMainController: UITabBarController {
+    // 定时器
+    private var timer: Timer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +18,12 @@ class WBMainController: UITabBarController {
         // Do any additional setup after loading the view.
         setupChildControllers()
         setComposeButton()
+        
+        setupTimer()
+        delegate = self
+    }
+    deinit {
+        timer?.invalidate()
     }
     
     private lazy var composeButton: UIButton = UIButton.lp_imageButton(imageName: "tabbar_compose_icon_add", backImageName: "tabbar_compose_button")
@@ -48,7 +56,9 @@ extension WBMainController {
     private func setComposeButton() {
         tabBar.addSubview(composeButton)
         let count: CGFloat = CGFloat(childViewControllers.count)
-        let w = tabBar.bounds.width / count - 1
+        // 这个是因为下面用 tabbarcontroler shouldSelect 方法判断了所以不用-1了
+        //let w = tabBar.bounds.width / count - 1
+        let w = tabBar.bounds.width / count
         composeButton.frame = tabBar.bounds.insetBy(dx: w * 2, dy: 0)
     }
     
@@ -95,6 +105,60 @@ extension WBMainController {
     }
 }
 
+// 时钟相关
+extension WBMainController {
+    private func setupTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(undateTimer), userInfo: nil, repeats: true)
+    }
+    
+    @objc private func undateTimer() {
+        print(#function)
+        // test 未读数量
+        WBNetworkManager.shared.unreadCount { (count) in
+            print("有\(count)条新微博")
+            self.tabBar.items?[0].badgeValue = count > 0 ? "\(count)" : nil
+            // 从ios8 开始要有授权才能显示通知
+            UIApplication.shared.applicationIconBadgeNumber = count
+        }
+    }
+}
+
+// tabbar delegate
+extension WBMainController: UITabBarControllerDelegate {
+    /// 将要选择 TabbarItem
+    ///
+    /// - Parameters:
+    ///   - tabBarController: tabbarController
+    ///   - viewController: 目标控制器
+    ///
+    ///
+    /// - Returns: 是否切换到目标控制器
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        print("将要执行的Tabbar \(viewController)")
+        // 中间的那个加号按钮是UIViewController所以
+        //1 > 获以控制器在数组中的索引
+        let idx = childViewControllers.index(of: viewController)
+        //2 > 得到当前索引
+        // 同时idx也是首页，重复点击首页
+        if selectedIndex == 0 && idx == selectedIndex {
+            print("点击首页")
+            // 让表格滚动到顶
+            // 获取到控制器
+            let nav = childViewControllers[0] as! UINavigationController
+            let vc = nav.childViewControllers[0] as! WBHomeViewController
+            // 滚动到顶部
+            vc.tableView?.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+            // 刷新表格
+            // 增加延迟，是保证表格先滚动顶部，再加载数据
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                vc.loadData()
+            }
+            
+        }
+        
+        return !viewController.isMember(of: UIViewController.self)
+    }
+}
 
 
 

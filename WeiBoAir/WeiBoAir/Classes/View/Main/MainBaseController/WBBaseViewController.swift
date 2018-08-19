@@ -158,21 +158,23 @@ extension WBBaseViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-//        // 1. 判断indexPath 是否是最后一行
-//        // (indexPath.selection(最大) / indexPath.row(最后一行))
-//        // 1> row
-//        let row = indexPath.row
-//        let section = tableView.numberOfSections - 1
-//        if row < 0 || section < 0 {
-//            return
-//        }
-//        
-//        // 行数
-//        let count = tableView.numberOfRows(inSection: section)
-//        // 如果是最后一行，同时没有上拉刷新
-//        if (row == (count - 1)) && !isPullup {
-//            print("上拉刷新")
-//        }
+        // 1. 判断indexPath 是否是最后一行
+        // (indexPath.selection(最大) / indexPath.row(最后一行))
+        // 1> row
+        let row = indexPath.row
+        let section = tableView.numberOfSections - 1
+        if row < 0 || section < 0 {
+            return
+        }
+        
+        // 行数
+        let count = tableView.numberOfRows(inSection: section)
+        // 如果是最后一行，同时没有上拉刷新
+        if (row == (count - 1)) && !isPullup {
+            print("上拉刷新")
+            isPullup = true
+            loadData()
+        }
     }
     
     // MARK: setupTableView

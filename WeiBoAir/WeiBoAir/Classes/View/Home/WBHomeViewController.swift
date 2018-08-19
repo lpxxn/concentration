@@ -41,9 +41,14 @@ class WBHomeViewController: WBBaseViewController {
     override func loadData() {
         print("开始加载数据")
     
-        listViewModel.loadStatus(isPullup: false) { (isSuccess, shouldRefresh)  in
+        listViewModel.loadStatus(isPullup: self.isPullup) { (isSuccess, shouldRefresh)  in
+            // 结束刷新控件
             self.refreshControl?.endRefreshing()
-            self.tableView?.reloadData()
+            
+            self.isPullup  = false
+            if shouldRefresh {
+                self.tableView?.reloadData()
+            }
         }
         // 模拟延时加载数据 dispach_after
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -104,10 +109,12 @@ extension WBHomeViewController {
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let lastElement = listViewModel.statusList.count - 1
-        if !isPullup && indexPath.row == lastElement {
-            print("-------------------")
-        }
+        super.tableView(tableView, willDisplay: cell, forRowAt: indexPath)
+        // 这样也可以判断是否是最后一行。
+//        let lastElement = listViewModel.statusList.count - 1
+//        if !isPullup && indexPath.row == lastElement {
+//            print("-------------------")
+//        }
     }
     
     override func setupTableView() {
