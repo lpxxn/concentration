@@ -11,6 +11,7 @@ import UIKit
 class WBMainController: UITabBarController {
     // 定时器
     private var timer: Timer?
+    lazy var homeTabbarIsTarget: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,6 +126,7 @@ extension WBMainController {
 
 // tabbar delegate
 extension WBMainController: UITabBarControllerDelegate {
+    
     /// 将要选择 TabbarItem
     ///
     /// - Parameters:
@@ -140,7 +142,8 @@ extension WBMainController: UITabBarControllerDelegate {
         let idx = childViewControllers.index(of: viewController)
         //2 > 得到当前索引
         // 同时idx也是首页，重复点击首页
-        if selectedIndex == 0 && idx == selectedIndex {
+        if selectedIndex == 0 && idx == selectedIndex && !homeTabbarIsTarget{
+            homeTabbarIsTarget = true
             print("点击首页")
             // 让表格滚动到顶
             // 获取到控制器
@@ -152,6 +155,7 @@ extension WBMainController: UITabBarControllerDelegate {
             // 增加延迟，是保证表格先滚动顶部，再加载数据
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
                 vc.loadData()
+                self.homeTabbarIsTarget = false
             }
             
         }
