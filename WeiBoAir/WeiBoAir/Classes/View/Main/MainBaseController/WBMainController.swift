@@ -144,7 +144,7 @@ extension WBMainController: UITabBarControllerDelegate {
         // 同时idx也是首页，重复点击首页
         if selectedIndex == 0 && idx == selectedIndex && !homeTabbarIsTarget{
             homeTabbarIsTarget = true
-            print("点击首页")
+            //print("点击首页")
             // 让表格滚动到顶
             // 获取到控制器
             let nav = childViewControllers[0] as! UINavigationController
