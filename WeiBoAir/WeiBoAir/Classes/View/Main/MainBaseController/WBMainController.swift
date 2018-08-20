@@ -106,13 +106,18 @@ extension WBMainController {
     }
 }
 
-// 时钟相关
+//
+// MARK: - 时钟相关
 extension WBMainController {
     private func setupTimer() {
+        
         timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(undateTimer), userInfo: nil, repeats: true)
     }
     
     @objc private func undateTimer() {
+        if !WBNetworkManager.shared.userLogin {
+            return
+        }
         print(#function)
         // test 未读数量
         WBNetworkManager.shared.unreadCount { (count) in

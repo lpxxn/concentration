@@ -12,7 +12,7 @@ class WBBaseViewController: UIViewController {
 
 //    lazy var navigationBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.lp_screenWidth, height: 64))
     
-    lazy var isLogin: Bool = true
+    //lazy var isLogin: Bool = false
     
     var navigationBar: UINavigationBar?
     
@@ -65,7 +65,7 @@ extension WBBaseViewController {
         automaticallyAdjustsScrollViewInsets = false
         
         setupNavigationBar()
-        if isLogin {
+        if WBNetworkManager.shared.userLogin {
             setupTableView()
             loadData()
         } else {

@@ -16,7 +16,7 @@ extension WBNetworkManager {
         
         let params = ["since_id": sinceId, "max_id": maxId > 0 ? maxId - 1 : 0]
         tokenRequest(method: .GET, url: url, params: params as [String : AnyObject]) { (json, isSuccess) in
-            //print("\(json ?? "no value" as AnyObject)")
+            print("\(json ?? "no value" as AnyObject)")
             let st1 = "aaa"
             print(st1)
 //                let str = "\(String(describing: json!["statuses"]!!))"
