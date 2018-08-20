@@ -22,9 +22,17 @@ class WBMainController: UITabBarController {
         
         setupTimer()
         delegate = self
+        
+        // 注册通知
+        NotificationCenter.default.addObserver(self, selector: #selector(userLogin), name: NSNotification.Name(rawValue: WBUserShouldLoginNotification), object: nil)
     }
     deinit {
         timer?.invalidate()
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc private func userLogin(n: Notification) {
+        print("用户登录通知\(n)）")
     }
     
     private lazy var composeButton: UIButton = UIButton.lp_imageButton(imageName: "tabbar_compose_icon_add", backImageName: "tabbar_compose_button")

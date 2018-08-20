@@ -26,6 +26,7 @@
 		0A7AAEE52127B79E00FF3244 /* WBNetworkManagerExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7AAEE42127B79E00FF3244 /* WBNetworkManagerExtend.swift */; };
 		0A7AAEE72128162900FF3244 /* WBStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7AAEE62128162900FF3244 /* WBStatus.swift */; };
 		0A7AAEE92128170B00FF3244 /* WBStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7AAEE82128170B00FF3244 /* WBStatusListViewModel.swift */; };
+		0AA11E14212A6F17002B0007 /* WBCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA11E13212A6F17002B0007 /* WBCommon.swift */; };
 		0AA900E321103C17009ECD30 /* ScreenExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA900E221103C17009ECD30 /* ScreenExtend.swift */; };
 		0AC82E57211850030056461B /* WBVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC82E56211850030056461B /* WBVisitorView.swift */; };
 		0AD5AAFF211152F200990046 /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD5AAFE211152F200990046 /* WBDemoViewController.swift */; };
@@ -55,6 +56,7 @@
 		0A7AAEE42127B79E00FF3244 /* WBNetworkManagerExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBNetworkManagerExtend.swift; sourceTree = "<group>"; };
 		0A7AAEE62128162900FF3244 /* WBStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatus.swift; sourceTree = "<group>"; };
 		0A7AAEE82128170B00FF3244 /* WBStatusListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusListViewModel.swift; sourceTree = "<group>"; };
+		0AA11E13212A6F17002B0007 /* WBCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBCommon.swift; sourceTree = "<group>"; };
 		0AA900E221103C17009ECD30 /* ScreenExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenExtend.swift; sourceTree = "<group>"; };
 		0AC82E56211850030056461B /* WBVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBVisitorView.swift; sourceTree = "<group>"; };
 		0AD5AAFE211152F200990046 /* WBDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			children = (
 				0A2A0C9E210D61370077F4AA /* Network */,
 				0A2A0CA1210D66460077F4AA /* CExtension */,
+				0AA11E13212A6F17002B0007 /* WBCommon.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				0A2463DB210CADD2006DF5BE /* WBHomeViewController.swift in Sources */,
 				0A2A0CA3210D66710077F4AA /* ButtonExtend.swift in Sources */,
 				0AC82E57211850030056461B /* WBVisitorView.swift in Sources */,
+				0AA11E14212A6F17002B0007 /* WBCommon.swift in Sources */,
 				0A3947F1210C676800DD8ACE /* AppDelegate.swift in Sources */,
 				0A2463D3210CAB01006DF5BE /* BundleExtend.swift in Sources */,
 				0AD5AB022111B42C00990046 /* UIBarButtonItemExtend.swift in Sources */,

@@ -234,7 +234,8 @@ extension WBBaseViewController {
     @objc func login() {
         print(#function)
         print("login")
-        //isLogin = true
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBUserShouldLoginNotification), object: nil)
+        
     }
     
     @objc func register() {
