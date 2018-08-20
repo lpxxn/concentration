@@ -29,7 +29,7 @@ class WBNetworkManager: AFHTTPSessionManager {
         return instance
     }()
     // mi_duo的号
-    var accessToken: String?// = "2.00ROiI2C09mo9n2d6bf48240T1KJRE"
+    var accessToken: String? = "2.00ROiI2C09mo9n2d6bf48240T1KJRE"
     var uid: String = "1097201945"
     var appKey: String = "730908852"
     var appSecret: String = "235ff505a652d4901a6bca69371a72f6"
@@ -58,7 +58,7 @@ class WBNetworkManager: AFHTTPSessionManager {
     
     func request(method: WBHTTPMethod = .GET, url: String, paramters:[String:AnyObject]?, completion: @escaping (_ json: AnyObject?, _ isSuccess: Bool)->()) {
         let success = { (task: URLSessionTask, json: Any?) -> () in
-            let str = String(describing: json)
+            //let str = String(describing: json)
             completion(json as AnyObject, true)
         }
         

@@ -27,6 +27,7 @@
 		0A7AAEE72128162900FF3244 /* WBStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7AAEE62128162900FF3244 /* WBStatus.swift */; };
 		0A7AAEE92128170B00FF3244 /* WBStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7AAEE82128170B00FF3244 /* WBStatusListViewModel.swift */; };
 		0AA11E14212A6F17002B0007 /* WBCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA11E13212A6F17002B0007 /* WBCommon.swift */; };
+		0AA11E17212A903D002B0007 /* WBOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA11E16212A903D002B0007 /* WBOAuthViewController.swift */; };
 		0AA900E321103C17009ECD30 /* ScreenExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA900E221103C17009ECD30 /* ScreenExtend.swift */; };
 		0AC82E57211850030056461B /* WBVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC82E56211850030056461B /* WBVisitorView.swift */; };
 		0AD5AAFF211152F200990046 /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD5AAFE211152F200990046 /* WBDemoViewController.swift */; };
@@ -57,6 +58,7 @@
 		0A7AAEE62128162900FF3244 /* WBStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatus.swift; sourceTree = "<group>"; };
 		0A7AAEE82128170B00FF3244 /* WBStatusListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusListViewModel.swift; sourceTree = "<group>"; };
 		0AA11E13212A6F17002B0007 /* WBCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBCommon.swift; sourceTree = "<group>"; };
+		0AA11E16212A903D002B0007 /* WBOAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBOAuthViewController.swift; sourceTree = "<group>"; };
 		0AA900E221103C17009ECD30 /* ScreenExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenExtend.swift; sourceTree = "<group>"; };
 		0AC82E56211850030056461B /* WBVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBVisitorView.swift; sourceTree = "<group>"; };
 		0AD5AAFE211152F200990046 /* WBDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
@@ -215,11 +217,20 @@
 		0A394815210C771000DD8ACE /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				0AA11E15212A900F002B0007 /* OAuth */,
 				0AC82E5221184EA10056461B /* MainBaseController */,
 				0AC82E5321184F7B0056461B /* VisitorController */,
 				0AD5AB00211154BC00990046 /* Test */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		0AA11E15212A900F002B0007 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				0AA11E16212A903D002B0007 /* WBOAuthViewController.swift */,
+			);
+			path = OAuth;
 			sourceTree = "<group>";
 		};
 		0AC82E5221184EA10056461B /* MainBaseController */ = {
@@ -402,6 +413,7 @@
 				0A2463E1210CAE07006DF5BE /* WBProfileViewController.swift in Sources */,
 				0AA900E321103C17009ECD30 /* ScreenExtend.swift in Sources */,
 				0A2463DB210CADD2006DF5BE /* WBHomeViewController.swift in Sources */,
+				0AA11E17212A903D002B0007 /* WBOAuthViewController.swift in Sources */,
 				0A2A0CA3210D66710077F4AA /* ButtonExtend.swift in Sources */,
 				0AC82E57211850030056461B /* WBVisitorView.swift in Sources */,
 				0AA11E14212A6F17002B0007 /* WBCommon.swift in Sources */,
