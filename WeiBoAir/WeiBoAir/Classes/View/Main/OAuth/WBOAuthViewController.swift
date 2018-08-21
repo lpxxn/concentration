@@ -62,9 +62,9 @@ extension WBOAuthViewController: UIWebViewDelegate {
             return false
         }
         //得到授权码
-        let code = request.url?.getQueryStringParameter(param: "code")
+        let code = request.url?.getQueryStringParameter(param: "code") ?? ""
         print("code = \(code)")
         
-        return true
+        return false
     }
 }
