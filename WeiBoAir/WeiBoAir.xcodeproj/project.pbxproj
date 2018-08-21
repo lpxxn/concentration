@@ -20,6 +20,7 @@
 		0A2463E5210CB8D1006DF5BE /* TypeExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2463E4210CB8D1006DF5BE /* TypeExtend.swift */; };
 		0A2A0CA0210D61C00077F4AA /* WBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2A0C9F210D61C00077F4AA /* WBNetworkManager.swift */; };
 		0A2A0CA3210D66710077F4AA /* ButtonExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2A0CA2210D66710077F4AA /* ButtonExtend.swift */; };
+		0A34FC41212BBB0B0035CA14 /* UrlExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A34FC40212BBB0B0035CA14 /* UrlExtend.swift */; };
 		0A3947F1210C676800DD8ACE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3947F0210C676800DD8ACE /* AppDelegate.swift */; };
 		0A3947F6210C676800DD8ACE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A3947F4210C676800DD8ACE /* Main.storyboard */; };
 		0A3947F8210C676B00DD8ACE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A3947F7210C676B00DD8ACE /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		0A2463E4210CB8D1006DF5BE /* TypeExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeExtend.swift; sourceTree = "<group>"; };
 		0A2A0C9F210D61C00077F4AA /* WBNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBNetworkManager.swift; sourceTree = "<group>"; };
 		0A2A0CA2210D66710077F4AA /* ButtonExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtend.swift; sourceTree = "<group>"; };
+		0A34FC40212BBB0B0035CA14 /* UrlExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlExtend.swift; sourceTree = "<group>"; };
 		0A3947ED210C676800DD8ACE /* WeiBoAir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiBoAir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A3947F0210C676800DD8ACE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A3947F5210C676800DD8ACE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				0AA900E221103C17009ECD30 /* ScreenExtend.swift */,
 				0AD5AB012111B42C00990046 /* UIBarButtonItemExtend.swift */,
 				0A15C8A2211C359E001480A4 /* LabelExtend.swift */,
+				0A34FC40212BBB0B0035CA14 /* UrlExtend.swift */,
 			);
 			path = CExtension;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				0A2A0CA3210D66710077F4AA /* ButtonExtend.swift in Sources */,
 				0AC82E57211850030056461B /* WBVisitorView.swift in Sources */,
 				0AA11E14212A6F17002B0007 /* WBCommon.swift in Sources */,
+				0A34FC41212BBB0B0035CA14 /* UrlExtend.swift in Sources */,
 				0A3947F1210C676800DD8ACE /* AppDelegate.swift in Sources */,
 				0A2463D3210CAB01006DF5BE /* BundleExtend.swift in Sources */,
 				0AD5AB022111B42C00990046 /* UIBarButtonItemExtend.swift in Sources */,

@@ -19,12 +19,19 @@ class WBOAuthViewController: UIViewController {
         
         title = "登录新浪微博"
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", fontSize: 16, target: self, action: #selector(close), isBack: true)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "自动填充",  fontSize: 16, target: self, action: #selector(autofill), isBack: false)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let reqUrl = "https://api.weibo.com/oauth2/authorize?client_id=\(WBappKey)&redirect_uri=\(WBRedirectURI)"
+        guard let url = URL(string: reqUrl) else {
+            return
+        }
+        webView.loadRequest(URLRequest(url: url))
+        webView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,5 +41,30 @@ class WBOAuthViewController: UIViewController {
     
     @objc private func close() {
         dismiss(animated: true, completion: nil)
+    }
+    @objc private func autofill() {
+        let js = "document.getElementById('userId').value='\(WBUserName)';" + "document.getElementById('passwd').value='\(WBPwd)';"
+        let rev =  webView.stringByEvaluatingJavaScript(from: js)
+        print(rev)
+    }
+}
+
+
+extension WBOAuthViewController: UIWebViewDelegate {
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        print("应该打开的路径 - \(request.url)")
+        if request.url?.absoluteString.hasPrefix(WBRedirectURI) == false {
+            return true
+        }
+        // 没有code= 授权失败
+        if request.url?.query?.hasPrefix("code=") == false {
+            close()
+            return false
+        }
+        //得到授权码
+        let code = request.url?.getQueryStringParameter(param: "code")
+        print("code = \(code)")
+        
+        return true
     }
 }

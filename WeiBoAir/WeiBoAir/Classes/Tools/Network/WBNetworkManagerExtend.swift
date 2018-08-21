@@ -49,3 +49,27 @@ extension WBNetworkManager {
         
     }
 }
+
+
+// MARK: - OAuth 授权相关
+extension WBNetworkManager {
+    
+    func loadAccessToken(code: String, completion: @escaping (_ isSuccess: Bool) -> ()) {
+        let url = "https://api.weibo.com/oauth2/access_token"
+        let params = ["client_id": WBappKey, "client_secret": WBappSecret, "grant_type": "authorization_code", "redirect_uri": WBRedirectURI, "code": code]
+        request(url: url, paramters: params as [String : AnyObject]) { (json, isSuccess) in
+            
+        }
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
