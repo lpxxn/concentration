@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 /// 微博OAuth 授权处理器
 class WBOAuthViewController: UIViewController {
 
@@ -15,22 +15,55 @@ class WBOAuthViewController: UIViewController {
     
     override func loadView() {
         view = webView
-        view.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.8901960784, green: 0.9019607843, blue: 0.9098039216, alpha: 1)
         
         title = "登录新浪微博"
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", fontSize: 16, target: self, action: #selector(close), isBack: true)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "自动填充",  fontSize: 16, target: self, action: #selector(autofill), isBack: false)
+        webView.scrollView.isScrollEnabled = false
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//        if #available(iOS 11.0, *) {
+//            webView.translatesAutoresizingMaskIntoConstraints = false
+//            //let margins = view.layoutMarginsGuide
+//            let guide = view.safeAreaLayoutGuide
+//            NSLayoutConstraint.activate([
+////                    webView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+////                    webView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+//                    webView.topAnchor.constraintEqualToSystemSpacingBelow(guide.topAnchor, multiplier: 1.0),
+//                    //guide.bottomAnchor.constraintEqualToSystemSpacingBelow(webView.bottomAnchor, multiplier: 1.0)
+//                    guide.bottomAnchor.constraint(equalTo: webView.bottomAnchor, constant: 1.0)
+//
+////                webView.widthAnchor.constraint(equalTo: view.widthAnchor),
+////                //webView.topAnchor.constraint(equalTo: margins.topAnchor),
+////                webView.topAnchor.constraint(equalTo: view.topAnchor),
+////                webView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -34)
+//                ])
+//        }
+//        if #available(iOS 11.0, *) {
+//            webView.translatesAutoresizingMaskIntoConstraints = false
+//            // iconView
+//
+//            webView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+//            webView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+//            webView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+//            webView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
+//            let window = UIApplication.shared.keyWindow
+//            let bottomPadding = window?.safeAreaInsets.bottom ?? 0
+//            webView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -bottomPadding).isActive = true
+//        }
+        
         // Do any additional setup after loading the view.
         let reqUrl = "https://api.weibo.com/oauth2/authorize?client_id=\(WBappKey)&redirect_uri=\(WBRedirectURI)"
         guard let url = URL(string: reqUrl) else {
             return
         }
-        webView.loadRequest(URLRequest(url: url))
+        DispatchQueue.main.async {
+             self.webView.loadRequest(URLRequest(url: url))
+        }
         webView.delegate = self
     }
 
@@ -39,7 +72,9 @@ class WBOAuthViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
     @objc private func close() {
+        SVProgressHUD.dismiss()
         dismiss(animated: true, completion: nil)
     }
     @objc private func autofill() {
@@ -66,5 +101,12 @@ extension WBOAuthViewController: UIWebViewDelegate {
         print("code = \(code)")
         
         return false
+    }
+    
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        SVProgressHUD.show()
+    }
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        SVProgressHUD.dismiss()
     }
 }
