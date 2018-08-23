@@ -96,9 +96,20 @@ extension WBOAuthViewController: UIWebViewDelegate {
             close()
             return false
         }
+        // SVProgressHUD.showInfo(withStatus: "请求失败testing")
         //得到授权码
-        let code = request.url?.getQueryStringParameter(param: "code") ?? ""
+        guard let code = request.url?.getQueryStringParameter(param: "code") else {
+            close()
+            return false
+        }
         print("code = \(code)")
+        WBNetworkManager.shared.loadAccessToken(code: code) { (isSuccess) in
+            if isSuccess {
+                
+            } else {
+                SVProgressHUD.showInfo(withStatus: "请求失败")
+            }
+        }
         
         return false
     }

@@ -20,25 +20,26 @@ class WBNetworkManager: AFHTTPSessionManager {
     
     static let shared: WBNetworkManager = {
         let instance = WBNetworkManager()
-        //instance.responseSerializer.acceptableContentTypes?.insert("text/plain")
-        instance.requestSerializer = AFJSONRequestSerializer()
-        instance.responseSerializer = AFJSONResponseSerializer()
-        instance.requestSerializer.setValue("application/json,text/html", forHTTPHeaderField: "Accept")
-        instance.requestSerializer.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-        instance.responseSerializer.acceptableContentTypes?.insert("text/html")
+        instance.responseSerializer.acceptableContentTypes?.insert("text/plain")
+//        instance.requestSerializer = AFJSONRequestSerializer()
+//        instance.responseSerializer = AFJSONResponseSerializer()
+//        instance.requestSerializer.setValue("application/json,text/html", forHTTPHeaderField: "Accept")
+//        instance.requestSerializer.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+//        instance.responseSerializer.acceptableContentTypes?.insert("text/plain")
         return instance
     }()
     // mi_duo的号
-    var accessToken: String? //= "2.00ROiI2C09mo9n2d6bf48240T1KJRE"
-    var uid: String = "1097201945"
+    lazy var userAccount = WBUserAccount()
+//    var accessToken: String? //= "2.00ROiI2C09mo9n2d6bf48240T1KJRE"
+//    var uid: String = "1097201945"
     
     var userLogin: Bool {
-        return accessToken != nil
+        return userAccount.access_token != nil
     }
     
     func tokenRequest(method: WBHTTPMethod = .GET, url: String, params:[String:AnyObject]?, completion: @escaping (_ json: AnyObject?, _ isSuccess: Bool)->()) {
         
-        guard let token = accessToken else {
+        guard let token = userAccount.access_token else {
             print("没有Token")
              // FIXME: 发送通知 提示用户登录
             completion(nil, false)

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A15C8A3211C359E001480A4 /* LabelExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A15C8A2211C359E001480A4 /* LabelExtend.swift */; };
+		0A174C87212EEA9700AF8ED9 /* WBUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A174C86212EEA9700AF8ED9 /* WBUserAccount.swift */; };
 		0A2463D3210CAB01006DF5BE /* BundleExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2463D2210CAB01006DF5BE /* BundleExtend.swift */; };
 		0A2463D5210CACD2006DF5BE /* WBMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2463D4210CACD2006DF5BE /* WBMainController.swift */; };
 		0A2463D7210CAD45006DF5BE /* WBNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2463D6210CAD45006DF5BE /* WBNavigationController.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		0A15C8A2211C359E001480A4 /* LabelExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelExtend.swift; sourceTree = "<group>"; };
+		0A174C86212EEA9700AF8ED9 /* WBUserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBUserAccount.swift; sourceTree = "<group>"; };
 		0A2463D2210CAB01006DF5BE /* BundleExtend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtend.swift; sourceTree = "<group>"; };
 		0A2463D4210CACD2006DF5BE /* WBMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBMainController.swift; sourceTree = "<group>"; };
 		0A2463D6210CAD45006DF5BE /* WBNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBNavigationController.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				0A7AAEE62128162900FF3244 /* WBStatus.swift */,
+				0A174C86212EEA9700AF8ED9 /* WBUserAccount.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				0AC82E57211850030056461B /* WBVisitorView.swift in Sources */,
 				0AA11E14212A6F17002B0007 /* WBCommon.swift in Sources */,
 				0A34FC41212BBB0B0035CA14 /* UrlExtend.swift in Sources */,
+				0A174C87212EEA9700AF8ED9 /* WBUserAccount.swift in Sources */,
 				0A3947F1210C676800DD8ACE /* AppDelegate.swift in Sources */,
 				0A2463D3210CAB01006DF5BE /* BundleExtend.swift in Sources */,
 				0AD5AB022111B42C00990046 /* UIBarButtonItemExtend.swift in Sources */,
