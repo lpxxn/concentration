@@ -10,7 +10,7 @@ import Foundation
 import YYModel
 
 class WBUserAccount: NSObject {
-    @objc var access_token: String? = "2.00ROiI2C09mo9n2d6bf48240T1KJRE"
+    @objc var access_token: String? //= "2.00ROiI2C09mo9n2d6bf48240T1KJRE"
     /// 用户代号
     @objc var uid: String?
     
@@ -18,7 +18,13 @@ class WBUserAccount: NSObject {
     /// 过期时间
     /// 开发者5年
     /// 使用者3天
-    @objc var expires_in: TimeInterval = 0.0
+    @objc var expires_in: TimeInterval = 0.0 {
+        didSet {
+            expireData = Date(timeIntervalSinceNow: expires_in)
+        }
+    }
+    
+    @objc var expireData: Date?
     
     override var description: String {
             return yy_modelDescription()

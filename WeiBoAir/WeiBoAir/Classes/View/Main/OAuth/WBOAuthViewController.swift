@@ -106,6 +106,7 @@ extension WBOAuthViewController: UIWebViewDelegate {
         WBNetworkManager.shared.loadAccessToken(code: code) { (isSuccess) in
             if isSuccess {
                 
+                //close()
             } else {
                 SVProgressHUD.showInfo(withStatus: "请求失败")
             }

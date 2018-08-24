@@ -61,6 +61,8 @@ extension WBNetworkManager {
         let params = ["client_id": WBappKey, "client_secret": WBappSecret, "grant_type": "authorization_code", "redirect_uri": WBRedirectURI, "code": code]
         request(method: .POST, url: url, paramters: params as [String : AnyObject]) { (json, isSuccess) in
             print(json)
+            self.userAccount.yy_modelSet(with: json as? [String: AnyObject] ?? [:])
+            print(self.userAccount)
         }
     }
     
