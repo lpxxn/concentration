@@ -32,7 +32,11 @@ class WBBaseViewController: UIViewController {
         // Do any additional setup after loading the view.
        
         setupUI()
-
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(userLoginSuccess), name: NSNotification.Name(rawValue: WBUserLoginSuccessNotification), object: nil)
+    }
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -210,6 +214,21 @@ extension WBBaseViewController: UITableViewDelegate, UITableViewDataSource {
 
 // MARK: - VisitorView
 extension WBBaseViewController {
+    // 登录成功处理
+    @objc func userLoginSuccess(n: Notification) {
+        print("登录成功\(n)")
+        //
+        navigationItem.leftBarButtonItem = nil
+        navigationItem.rightBarButtonItem = nil
+        // 因为会 下面 reloadVIew会两次注册Notifiction。所以先移除
+        NotificationCenter.default.removeObserver(self)
+        // 更新 UI 将访客视图转换为登录视图
+        // 需要重新设置 view
+        // 在访问view的getter时，如果 view == nil ， 会调用loadview -> viewDidLoad
+        view = nil
+        
+    }
+    
     @objc func setupVisitorView() {
         let v = WBVisitorView(frame: view.bounds)
         
