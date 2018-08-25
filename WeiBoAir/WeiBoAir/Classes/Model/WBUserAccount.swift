@@ -9,6 +9,7 @@
 import Foundation
 import YYModel
 
+private let accountFileName: String = "userAccount.json"
 class WBUserAccount: NSObject {
     @objc var access_token: String? //= "2.00ROiI2C09mo9n2d6bf48240T1KJRE"
     /// 用户代号
@@ -28,6 +29,19 @@ class WBUserAccount: NSObject {
     
     override var description: String {
             return yy_modelDescription()
+    }
+    
+    func saveAccount() {
+        // 1. 模型转视频
+        var dict = self.yy_modelToJSONObject() as? [String: AnyObject] ?? [:]
+        dict.removeValue(forKey: "expires_in")
+        // 字典序列化data
+        guard let data = try? JSONSerialization.data(withJSONObject: dict, options: []) else {
+            return
+        }
+        //let filePath = FileManager.documentsDir()
+        let filePath = accountFileName.appendDocumentDir()
+        (data as NSData).write(toFile: filePath, atomically: true)
     }
     
 }

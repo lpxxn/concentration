@@ -63,6 +63,7 @@ extension WBNetworkManager {
             print(json)
             self.userAccount.yy_modelSet(with: json as? [String: AnyObject] ?? [:])
             print(self.userAccount)
+            self.userAccount.saveAccount()
         }
     }
     
