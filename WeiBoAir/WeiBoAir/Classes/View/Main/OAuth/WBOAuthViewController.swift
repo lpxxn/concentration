@@ -105,8 +105,10 @@ extension WBOAuthViewController: UIWebViewDelegate {
         print("code = \(code)")
         WBNetworkManager.shared.loadAccessToken(code: code) { (isSuccess) in
             if isSuccess {
-                
-                //close()
+                // 跳转页面跳转到主页面
+                // 1 发送通知
+                NotificationCenter.default.post(name: NSNotification.Name(WBUserLoginSuccessNotification), object: nil)
+                self.close()
             } else {
                 SVProgressHUD.showInfo(withStatus: "请求失败")
             }

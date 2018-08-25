@@ -21,4 +21,5 @@ var WBPwd: String = ""
 // MARK: - 全局定义
 
 let WBUserShouldLoginNotification = "WBUserShouldLoginNotification"
-
+// 用户登录成功通知
+let WBUserLoginSuccessNotification = "WBUserLoginSuccessNotification"
