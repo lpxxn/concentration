@@ -13,6 +13,6 @@ extension String {
     ///
     /// - Returns: path
     func appendDocumentDir() -> String {
-        return self + FileManager.documentsDir()
+        return (FileManager.documentsDir() as NSString).appendingPathComponent(self)
     }
 }

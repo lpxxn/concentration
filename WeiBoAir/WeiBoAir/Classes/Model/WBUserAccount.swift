@@ -15,6 +15,28 @@ class WBUserAccount: NSObject {
     /// 用户代号
     @objc var uid: String?
     
+    override init() {
+        super.init()
+        // 加载保存的文件
+        let path = accountFileName.appendDocumentDir()
+        guard let data = NSData(contentsOfFile: path),
+        let dict = try? JSONSerialization.jsonObject(with: data as Data, options: []) as? [String: AnyObject] else {
+            return
+        }
+        self.yy_modelSet(with: dict ?? [:])
+        
+        // 判断是否过期
+        // expireData = Date(timeIntervalSinceNow: -3600 * 24)
+        if expireData?.compare(Date()) != .orderedDescending {
+            // 过期
+            access_token = nil
+            uid = nil
+            expireData = nil
+            
+            // 删除用户文件
+            try? FileManager.default.removeItem(atPath: path)
+        }
+    }
     
     /// 过期时间
     /// 开发者5年
@@ -41,6 +63,7 @@ class WBUserAccount: NSObject {
         }
         //let filePath = FileManager.documentsDir()
         let filePath = accountFileName.appendDocumentDir()
+        print("useraccount file path: \(filePath)")
         (data as NSData).write(toFile: filePath, atomically: true)
     }
     
